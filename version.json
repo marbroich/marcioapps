@@ -1,12 +1,12 @@
 {
-  "version": "v260430.01 9:09p",
-  "release": 1,
-  "sha": "97c7596",
-  "fullSha": "97c7596b3ae570be9c37a1c66ff71d50b1d6de33",
+  "version": "v260430.02 10:09p",
+  "release": 2,
+  "sha": "6a993cd",
+  "fullSha": "6a993cd963e6d2cb2cbccfc6b483323a201480b8",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-04-30T18:09:13-03:00",
-  "commits": []
+  "pushedAt": "2026-04-30T19:09:28-03:00",
+  "commits": [{"sha":"f9a453e","message":"chore: prune to small_business persona, add .claudeignore","author":"Marcio Simao"},{"sha":"6a993cd","message":"feat: bilingual placeholder homepage for Marcio Scharrenbroich Simão","author":"Marcio Simao"}]
 }
