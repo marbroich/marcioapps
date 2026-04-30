@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Astro · Admin Invites</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="../styles/tailwind.out.css">
+  <link rel="stylesheet" href="astro.css">
+</head>
+<body>
+  <div id="toastContainer"></div>
+  <div id="loadingOverlay"><div class="spinner"></div></div>
+
+  <div id="appContent" class="hidden">
+    <header id="astroHeader"></header>
+
+    <main class="astro-main">
+      <h2 class="astro-section-title">Manage astro invites</h2>
+      <p class="astro-section-sub">Add the email addresses of people you want to grant access. They'll need an existing account on the residents app to actually use the section.</p>
+
+      <div id="notAdmin" class="astro-notice astro-notice--warning hidden">
+        Only admins can manage invites.
+      </div>
+
+      <div id="adminArea" class="hidden">
+        <section class="astro-card">
+          <h2>Add invite</h2>
+          <form id="addForm" class="astro-form">
+            <div class="astro-form-row">
+              <div class="astro-field">
+                <label for="emailInput">Email</label>
+                <input type="email" id="emailInput" required>
+              </div>
+              <div class="astro-field">
+                <label for="notesInput">Notes (optional)</label>
+                <input type="text" id="notesInput" placeholder="e.g. Friend, met at retreat">
+              </div>
+            </div>
+            <div class="astro-actions">
+              <button type="submit" class="astro-btn astro-btn--primary">Add invite</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="astro-card">
+          <h2>Invited</h2>
+          <table class="astro-table">
+            <thead><tr><th>Email</th><th>Invited at</th><th>Accepted</th><th>Notes</th><th></th></tr></thead>
+            <tbody id="invitesBody"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase-js-2.39.3.min.js"></script>
+  <script type="module" src="admin-invites.js"></script>
+</body>
+</html>

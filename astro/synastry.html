@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Astro · Synastry</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="../styles/tailwind.out.css">
+  <link rel="stylesheet" href="astro.css">
+</head>
+<body>
+  <div id="toastContainer"></div>
+  <div id="loadingOverlay"><div class="spinner"></div></div>
+
+  <div id="appContent" class="hidden">
+    <header id="astroHeader"></header>
+
+    <main class="astro-main">
+      <h2 class="astro-section-title">Synastry &amp; compatibility</h2>
+      <p class="astro-section-sub">Pick another member to see how your charts and numbers interact. Your partner's profile data stays private — only chart positions and a numerology overlap are shown.</p>
+
+      <div id="missingData" class="astro-notice astro-notice--warning hidden">
+        Your own birth data must be set first — visit your <a href="profile.html">profile</a>.
+      </div>
+
+      <section class="astro-card">
+        <div class="astro-form-row">
+          <div class="astro-field">
+            <label for="partnerSelect">Partner</label>
+            <select id="partnerSelect"><option value="">Select someone…</option></select>
+            <p class="astro-field-help">Only members who've filled out their birth data appear here.</p>
+          </div>
+          <div class="astro-field">
+            <label for="partnerName">Their full name (for numerology)</label>
+            <input type="text" id="partnerName" placeholder="optional">
+            <p class="astro-field-help">Numerology compares full birth names; provide if known.</p>
+          </div>
+        </div>
+        <div class="astro-actions">
+          <button id="runBtn" class="astro-btn astro-btn--primary" disabled>Run synastry</button>
+        </div>
+      </section>
+
+      <div id="errorBox" class="astro-notice hidden" style="border-left-color:var(--color-aap-error);background:var(--color-aap-error-light)"></div>
+
+      <div id="resultArea" class="hidden">
+        <section class="astro-card">
+          <h2>Compatibility snapshot</h2>
+          <div id="snapshotGrid" class="astro-stat-grid"></div>
+        </section>
+
+        <section class="astro-card">
+          <h2>Inter-aspects (Western synastry)</h2>
+          <p class="astro-field-help">Aspects between your planets and theirs. Tightest first.</p>
+          <table class="astro-table">
+            <thead><tr><th>You</th><th>Aspect</th><th>Them</th><th class="num">Orb</th></tr></thead>
+            <tbody id="interBody"></tbody>
+          </table>
+        </section>
+
+        <section class="astro-card">
+          <h2>Numerology overlap</h2>
+          <table class="astro-table">
+            <thead><tr><th>Number</th><th>You</th><th>Them</th><th>Read</th></tr></thead>
+            <tbody id="numOverlapBody"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase-js-2.39.3.min.js"></script>
+  <script type="module" src="synastry.js"></script>
+</body>
+</html>

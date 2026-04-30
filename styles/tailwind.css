@@ -22,6 +22,7 @@
 @source "../kioskhall/**/*.js";
 @source "../community/**/*.js";
 @source "../events/**/*.js";
+@source "../astro/**/*.js";
 
 /* =============================================
    THEME — AAP Design Tokens

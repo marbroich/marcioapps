@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Astro · Profile</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="../styles/tailwind.out.css">
+  <link rel="stylesheet" href="astro.css">
+</head>
+<body>
+  <div id="toastContainer"></div>
+
+  <div id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="appContent" class="hidden">
+    <header id="astroHeader"></header>
+
+    <main class="astro-main">
+      <h2 class="astro-section-title">Your profile</h2>
+      <p class="astro-section-sub">Birth data drives every chart. Times need to be local at place of birth — we'll convert to UTC. If you don't know your time, leave it blank and check the box below; we'll show planet positions only.</p>
+
+      <form id="profileForm" class="astro-form" novalidate>
+        <!-- Birth data -->
+        <section class="astro-card">
+          <h2>Birth data</h2>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="birthDate">Birth date</label>
+              <input type="date" id="birthDate" name="birth_date" required>
+            </div>
+            <div class="astro-field">
+              <label for="birthTime">Birth time (local)</label>
+              <input type="time" id="birthTime" name="birth_time" step="60">
+              <label class="astro-checkbox-row">
+                <input type="checkbox" id="birthTimeUnknown" name="birth_time_known_inverted">
+                I don't know my exact birth time
+              </label>
+            </div>
+          </div>
+
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="birthPlace">Birth place (city, country)</label>
+              <input type="text" id="birthPlace" name="birth_place_name" placeholder="e.g. São Paulo, Brazil" autocomplete="off">
+              <p class="astro-field-help">Type a city and pick — we'll fill in latitude, longitude and timezone.</p>
+              <div id="placeResults" class="astro-place-results" style="display:none"></div>
+            </div>
+            <div class="astro-field">
+              <label for="birthTz">Timezone</label>
+              <input type="text" id="birthTz" name="birth_tz" placeholder="America/Sao_Paulo">
+              <p class="astro-field-help">IANA timezone (auto-filled when you pick a place).</p>
+            </div>
+          </div>
+
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="birthLat">Latitude</label>
+              <input type="number" id="birthLat" name="birth_lat" step="any" min="-90" max="90">
+            </div>
+            <div class="astro-field">
+              <label for="birthLon">Longitude</label>
+              <input type="number" id="birthLon" name="birth_lon" step="any" min="-180" max="180">
+            </div>
+          </div>
+        </section>
+
+        <!-- Astro preferences -->
+        <section class="astro-card">
+          <h2>Chart preferences</h2>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="houseSystem">House system (Western)</label>
+              <select id="houseSystem" name="house_system">
+                <option value="placidus">Placidus (default)</option>
+                <option value="koch">Koch</option>
+                <option value="whole">Whole sign</option>
+                <option value="equal">Equal house</option>
+                <option value="campanus">Campanus</option>
+                <option value="regiomontanus">Regiomontanus</option>
+              </select>
+            </div>
+            <div class="astro-field">
+              <label for="ayanamsa">Ayanamsa (Vedic)</label>
+              <select id="ayanamsa" name="ayanamsa">
+                <option value="lahiri">Lahiri (default)</option>
+                <option value="raman">Raman</option>
+                <option value="krishnamurti">Krishnamurti</option>
+                <option value="fagan_bradley">Fagan/Bradley</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Personal -->
+        <section class="astro-card">
+          <h2>Personal</h2>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="pronouns">Pronouns</label>
+              <input type="text" id="pronouns" name="pronouns" placeholder="she/her, he/him, they/them, ...">
+            </div>
+            <div class="astro-field">
+              <label for="relationshipStatus">Relationship status</label>
+              <select id="relationshipStatus" name="relationship_status">
+                <option value="">—</option>
+                <option value="single">Single</option>
+                <option value="dating">Dating</option>
+                <option value="partnered">Partnered</option>
+                <option value="married">Married</option>
+                <option value="separated">Separated</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+                <option value="complicated">It's complicated</option>
+              </select>
+            </div>
+          </div>
+          <div class="astro-field">
+            <label for="bio">Short bio</label>
+            <textarea id="bio" name="bio" placeholder="A sentence or two about you."></textarea>
+          </div>
+        </section>
+
+        <!-- Professional -->
+        <section class="astro-card">
+          <h2>Professional</h2>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="jobTitle">Job title</label>
+              <input type="text" id="jobTitle" name="job_title">
+            </div>
+            <div class="astro-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+          </div>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="industry">Industry</label>
+              <input type="text" id="industry" name="industry">
+            </div>
+            <div class="astro-field">
+              <label for="linkedinUrl">LinkedIn URL</label>
+              <input type="url" id="linkedinUrl" name="linkedin_url" placeholder="https://www.linkedin.com/in/...">
+            </div>
+          </div>
+          <div class="astro-field">
+            <label for="skills">Skills (comma-separated)</label>
+            <input type="text" id="skills" name="skills" placeholder="strategy, python, design, mediation">
+          </div>
+          <div class="astro-field">
+            <label for="professionalBio">Professional bio</label>
+            <textarea id="professionalBio" name="professional_bio" placeholder="What you do, what you've done."></textarea>
+          </div>
+          <div class="astro-field">
+            <label for="careerGoals">Career goals</label>
+            <textarea id="careerGoals" name="career_goals" placeholder="Where you're heading."></textarea>
+          </div>
+        </section>
+
+        <!-- Personality -->
+        <section class="astro-card">
+          <h2>Personality &amp; preferences</h2>
+          <div class="astro-form-row">
+            <div class="astro-field">
+              <label for="mbti">MBTI</label>
+              <input type="text" id="mbti" name="mbti" placeholder="e.g. INFJ" maxlength="4" style="text-transform:uppercase">
+            </div>
+            <div class="astro-field">
+              <label for="enneagram">Enneagram</label>
+              <input type="text" id="enneagram" name="enneagram" placeholder="e.g. 5w4">
+            </div>
+          </div>
+
+          <div class="astro-field">
+            <label>Love languages</label>
+            <div class="astro-chips" id="loveLanguagesChips"></div>
+          </div>
+
+          <div class="astro-field">
+            <label for="hobbies">Hobbies (comma-separated)</label>
+            <input type="text" id="hobbies" name="hobbies" placeholder="hiking, sourdough, chess">
+          </div>
+
+          <div class="astro-field">
+            <label for="personalValues">Personal values (comma-separated)</label>
+            <input type="text" id="personalValues" name="personal_values" placeholder="curiosity, kindness, autonomy">
+          </div>
+        </section>
+
+        <div class="astro-actions">
+          <button type="button" id="resetBtn" class="astro-btn astro-btn--ghost">Reset</button>
+          <button type="submit" id="saveBtn" class="astro-btn astro-btn--primary">Save profile</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase-js-2.39.3.min.js"></script>
+  <script type="module" src="profile.js"></script>
+</body>
+</html>

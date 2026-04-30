@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Astro · Vedic chart</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="../styles/tailwind.out.css">
+  <link rel="stylesheet" href="astro.css">
+</head>
+<body>
+  <div id="toastContainer"></div>
+  <div id="loadingOverlay"><div class="spinner"></div></div>
+
+  <div id="appContent" class="hidden">
+    <header id="astroHeader"></header>
+
+    <main class="astro-main">
+      <h2 class="astro-section-title">Vedic chart (Jyotish)</h2>
+      <p class="astro-section-sub">Sidereal zodiac with Lahiri ayanamsa. Whole-sign houses (the Vedic standard). Includes Rasi (D1), Navamsa (D9), Moon nakshatra, and Vimshottari mahadasha.</p>
+
+      <div id="missingData" class="astro-notice astro-notice--warning hidden">
+        Add your birth date (and ideally time + place) on your <a href="profile.html">profile</a> to compute your chart.
+      </div>
+
+      <div id="errorBox" class="astro-notice hidden" style="border-left-color:var(--color-aap-error);background:var(--color-aap-error-light)"></div>
+
+      <div id="chartArea" class="hidden">
+        <section class="astro-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+            <h2 style="margin:0">Snapshot</h2>
+            <button id="recomputeBtn" class="astro-btn">Recompute</button>
+          </div>
+          <div id="snapshotGrid" class="astro-stat-grid" style="margin-top:0.75rem;"></div>
+          <p id="ayanamsaNote" class="astro-field-help" style="margin-top:0.75rem"></p>
+        </section>
+
+        <div class="astro-twocol">
+          <section class="astro-card">
+            <h2>Rasi (D1) — planet positions</h2>
+            <table class="astro-table">
+              <thead>
+                <tr><th>Graha</th><th>Rasi</th><th class="num">Position</th><th>Bhava</th><th></th></tr>
+              </thead>
+              <tbody id="planetsBody"></tbody>
+            </table>
+          </section>
+
+          <section class="astro-card">
+            <h2>Navamsa (D9)</h2>
+            <table class="astro-table">
+              <thead><tr><th>Graha</th><th>Navamsa Rasi</th></tr></thead>
+              <tbody id="navamsaBody"></tbody>
+            </table>
+            <p class="astro-field-help" style="margin-top:0.5rem">D9 chart used for marriage, dharma, and refining D1 results.</p>
+          </section>
+        </div>
+
+        <div class="astro-twocol">
+          <section class="astro-card">
+            <h2>Bhavas (houses)</h2>
+            <table class="astro-table">
+              <thead><tr><th>Bhava</th><th>Rasi</th></tr></thead>
+              <tbody id="housesBody"></tbody>
+            </table>
+          </section>
+
+          <section class="astro-card">
+            <h2>Vimshottari Dasha</h2>
+            <div id="dashaSummary"></div>
+            <table class="astro-table" style="margin-top:0.75rem">
+              <thead><tr><th>Mahadasha lord</th><th>Start</th><th>End</th></tr></thead>
+              <tbody id="dashaSequence"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase-js-2.39.3.min.js"></script>
+  <script type="module" src="vedic.js"></script>
+</body>
+</html>
