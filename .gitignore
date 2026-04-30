@@ -57,3 +57,6 @@ scripts/gmail-credentials.json
 
 # Setup wizard state (gitignored)
 .setup-state.json
+
+# Wrangler local cache
+.wrangler/
