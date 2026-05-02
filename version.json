@@ -1,12 +1,12 @@
 {
-  "version": "v260430.02 10:09p",
-  "release": 2,
-  "sha": "6a993cd",
-  "fullSha": "6a993cd963e6d2cb2cbccfc6b483323a201480b8",
+  "version": "v260502.01 3:30p",
+  "release": 1,
+  "sha": "884be63",
+  "fullSha": "884be6364a4ec73221ace196bbea46f2d57efe16",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-04-30T19:09:28-03:00",
-  "commits": [{"sha":"f9a453e","message":"chore: prune to small_business persona, add .claudeignore","author":"Marcio Simao"},{"sha":"6a993cd","message":"feat: bilingual placeholder homepage for Marcio Scharrenbroich Simão","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-02T12:29:25-03:00",
+  "commits": [{"sha":"884be63","message":"feat: Great Guide — bespoke private tour app for hotel guests","author":"Marcio Simao"}]
 }
