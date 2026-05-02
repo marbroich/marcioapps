@@ -11,7 +11,7 @@ import crypto from 'crypto';
 // ============================================
 // Configuration
 // ============================================
-const SUPABASE_URL = process.env.SUPABASE_URL || 'YOUR_SUPABASE_URL';
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://xlhepbwnvdmhnwqndksj.supabase.co';
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const POLL_INTERVAL_MS = parseInt(process.env.POLL_INTERVAL_MS || '30000'); // 30s
 const API_DELAY_MS = parseInt(process.env.API_DELAY_MS || '1000'); // 1s between API calls

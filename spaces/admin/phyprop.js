@@ -439,7 +439,7 @@ async function loadZoning() {
 // RENDERINGS TAB
 // =============================================
 
-const STORAGE_BASE = 'YOUR_SUPABASE_URL/storage/v1/object/public/housephotos';
+const STORAGE_BASE = 'https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos';
 
 const SURVEY_PLATS = [
   {

@@ -532,8 +532,8 @@
   <header class="aap-header aap-header--transparent aap-header--light" id="aap-header">
     <div class="aap-header__inner">
       <a href="/" class="aap-header__logo">
-        <img width="21" height="30" src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-header__icon" data-light-src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" data-dark-src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-black-transparent.png">
-        <img width="22" height="22" src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-header__wordmark" data-light-src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" data-dark-src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/wordmark-black-transparent.png">
+        <img width="21" height="30" src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-header__icon" data-light-src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" data-dark-src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-black-transparent.png">
+        <img width="22" height="22" src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-header__wordmark" data-light-src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" data-dark-src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/wordmark-black-transparent.png">
         <span title="Site version" class="aap-header__version"></span>
       </a>
 
@@ -574,7 +574,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="aap-hero aap-hero--short" style="background-image: url('YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/site/hero-property.jpeg')">
+  <section class="aap-hero aap-hero--short" style="background-image: url('https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/site/hero-property.jpeg')">
     <div class="aap-hero__content">
       <h1 class="aap-hero__title">Contact Us</h1>
       <p class="aap-hero__subtitle">We'd love to hear from you</p>
@@ -776,8 +776,8 @@
   <footer class="aap-footer">
     <div class="aap-footer__content">
       <div class="aap-footer__logo">
-        <img width="21" height="30" src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-footer__icon">
-        <img width="22" height="22" src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-footer__wordmark">
+        <img width="21" height="30" src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-footer__icon">
+        <img width="22" height="22" src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="aap-footer__wordmark">
       </div>
 
       <div class="aap-footer__social">
@@ -1043,11 +1043,11 @@
       saveVisitor({ name: data.name, email: data.email, phone: data.phone });
 
       try {
-        const response = await fetch('YOUR_SUPABASE_URL/functions/v1/send-email', {
+        const response = await fetch('https://xlhepbwnvdmhnwqndksj.supabase.co/functions/v1/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'apikey': 'YOUR_SUPABASE_ANON_KEY'
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsaGVwYndudmRtaG53cW5ka3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1Nzc5MTQsImV4cCI6MjA5MzE1MzkxNH0.g3yfrL6nVsxssASjsBirNYfDTZBiiR0M0a9lYj9afzA'
           },
           body: JSON.stringify({
             type: 'contact_form',

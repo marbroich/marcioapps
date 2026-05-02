@@ -46,7 +46,7 @@ function injectHTML() {
     <div id="paiPanel" class="pai-panel hidden">
       <div class="pai-panel__header">
         <div class="pai-panel__title">
-          <img src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-black-transparent.png"
+          <img src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-black-transparent.png"
                alt="" class="pai-panel__avatar">
           <span>PAI</span>
           <span class="pai-panel__subtitle">Prompt Property Intelligence</span>

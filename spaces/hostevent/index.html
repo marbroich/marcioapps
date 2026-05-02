@@ -1525,8 +1525,8 @@
   <!-- Site-wide Navigation -->
   <nav class="site-nav">
     <a href="/" class="site-nav__logo">
-      <img src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="site-nav__icon">
-      <img src="YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="site-nav__wordmark">
+      <img src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/logo-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="site-nav__icon">
+      <img src="https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos/wordmark-white-transparent.png" alt="YOUR_PROPERTY_NAME Austin" class="site-nav__wordmark">
       <span title="Site version" class="site-nav__version">v260430.01 9:09p</span>
     </a>
     <ul class="site-nav__links">
@@ -3322,12 +3322,12 @@
       }
 
       try {
-        const response = await fetch('YOUR_SUPABASE_URL/functions/v1/send-email', {
+        const response = await fetch('https://xlhepbwnvdmhnwqndksj.supabase.co/functions/v1/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer YOUR_SUPABASE_ANON_KEY',
-            'apikey': 'YOUR_SUPABASE_ANON_KEY'
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsaGVwYndudmRtaG53cW5ka3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1Nzc5MTQsImV4cCI6MjA5MzE1MzkxNH0.g3yfrL6nVsxssASjsBirNYfDTZBiiR0M0a9lYj9afzA',
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsaGVwYndudmRtaG53cW5ka3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1Nzc5MTQsImV4cCI6MjA5MzE1MzkxNH0.g3yfrL6nVsxssASjsBirNYfDTZBiiR0M0a9lYj9afzA'
           },
           body: JSON.stringify({
             type: 'contact_form',

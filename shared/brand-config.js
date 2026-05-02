@@ -60,7 +60,7 @@ const FALLBACK_CONFIG = {
     weights: { light: 300, regular: 400, medium: 500, semibold: 600, bold: 700 },
   },
   logos: {
-    base_url: 'YOUR_SUPABASE_URL/storage/v1/object/public/housephotos/logos',
+    base_url: 'https://xlhepbwnvdmhnwqndksj.supabase.co/storage/v1/object/public/housephotos/logos',
     icon_dark: 'logo-black-transparent.png',
     icon_light: 'logo-white-transparent.png',
     wordmark_dark: 'wordmark-black-transparent.png',

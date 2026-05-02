@@ -1,8 +1,8 @@
 // Chat Widget for YOUR_PROPERTY_NAME
 // Uses Edge Function proxy to call Gemini API (keeps API key secure)
 
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://xlhepbwnvdmhnwqndksj.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsaGVwYndudmRtaG53cW5ka3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1Nzc5MTQsImV4cCI6MjA5MzE1MzkxNH0.g3yfrL6nVsxssASjsBirNYfDTZBiiR0M0a9lYj9afzA';
 const ASK_QUESTION_URL = `${SUPABASE_URL}/functions/v1/ask-question`;
 
 /**
