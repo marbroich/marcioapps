@@ -1,12 +1,12 @@
 {
-  "version": "v260504.01 1:03a",
-  "release": 1,
-  "sha": "8be1a65",
-  "fullSha": "8be1a6586dbe5a39575d3b401c086480e4aa13e7",
+  "version": "v260504.02 2:24p",
+  "release": 2,
+  "sha": "5b00126",
+  "fullSha": "5b001260cb43f68a4b7be2cbf9ec81983f2482da",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-03T22:03:42-03:00",
-  "commits": [{"sha":"d2c0b1b","message":"feat(astro): add astrology + numerology section under /astro/","author":"Marcio Simao"},{"sha":"ad5e2ab","message":"chore: configure Supabase project (marcioproject) credentials","author":"Marcio Simao"},{"sha":"7cfc6ab","message":"fix(supabase): rewrite astro migration to be self-contained","author":"Marcio Simao"},{"sha":"8be1a65","message":"Merge remote-tracking branch 'origin/main' into claude/wizardly-robinson-81bc96","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T11:23:58-03:00",
+  "commits": [{"sha":"5b00126","message":"fix: replace missing /vendor/supabase-js path with jsdelivr CDN","author":"Marcio Simao"}]
 }
