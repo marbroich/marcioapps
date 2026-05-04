@@ -4,155 +4,325 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EsoYou — preview do logo</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; color: #1c1618; background: #faf9f6; line-height: 1.5; }
-    main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 2.4rem; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
-    .sub { color: #7d6f74; margin-bottom: 2.5rem; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
-    .panel { padding: 2.5rem 1.5rem; border-radius: 16px; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
-    .panel.light { background: #fff; border: 1px solid #e6e2d9; }
-    .panel.cream { background: #faf9f6; border: 1px solid #e6e2d9; }
-    .panel.dark { background: #0f0a1f; color: #faf9f6; }
-    .panel.gradient { background: linear-gradient(135deg, #0f0a1f 0%, #2a1842 50%, #4a1e5c 100%); color: #faf9f6; }
-    .label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
-    .brand-block { text-align: center; }
-    .brand-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 2.4rem; letter-spacing: -0.01em; margin-top: 0.5rem; }
-    .brand-tag { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; margin-top: 0.25rem; }
-    .scaled-row { display: flex; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding: 1.5rem; background: #fff; border-radius: 12px; border: 1px solid #e6e2d9; }
-    .scale-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
-    .scale-item small { font-size: 0.7rem; color: #7d6f74; }
-    .description { padding: 1.5rem; background: #f2f0e8; border-radius: 12px; margin-top: 1rem; }
-    .description h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .description ul { margin-top: 0.5rem; padding-left: 1.25rem; color: #2a1f23; }
-    .description li { margin-bottom: 0.25rem; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #f0ecf5;
+      background: radial-gradient(ellipse at center, #2a1850 0%, #150828 70%, #0a0418 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 8rem; }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -0.01em;
+      text-align: center;
+      margin-bottom: 0.4rem;
+      background: linear-gradient(180deg, #fff 0%, #c0c0d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      text-align: center;
+      color: #a89bc1;
+      margin-bottom: 4rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.7rem;
+      color: #d8d4e8;
+      margin: 4rem 0 1.2rem;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      letter-spacing: 0.02em;
+      background: linear-gradient(180deg, #fff 0%, #c0c0d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .brand-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #b8a8d6;
+      font-weight: 500;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .panel {
+      padding: 2rem 1.5rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(192, 192, 216, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      backdrop-filter: blur(2px);
+    }
+    .panel.light { background: #faf9f6; color: #1c1618; border-color: rgba(0,0,0,0.06); }
+    .panel.silver-on-purple { background: linear-gradient(135deg, #2a1842, #1a0f30); }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a89bc1;
+      font-weight: 500;
+    }
+    .panel.light .label { color: #7d6f74; }
+
+    .scaled-row {
+      display: flex; align-items: flex-end; gap: 2rem;
+      flex-wrap: wrap; justify-content: center;
+      padding: 2rem 1.5rem;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(192, 192, 216, 0.12);
+      border-radius: 18px;
+    }
+    .scale-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .scale-item small { font-size: 0.7rem; color: #a89bc1; letter-spacing: 0.05em; }
+
+    .description {
+      padding: 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(192, 192, 216, 0.12);
+      border-radius: 18px;
+      margin-top: 2rem;
+    }
+    .description h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #d8d4e8;
+    }
+    .description p { color: #c8bedb; margin-bottom: 0.6rem; }
+    .description ul { margin-top: 0.6rem; padding-left: 1.5rem; color: #b8aacf; }
+    .description li { margin-bottom: 0.3rem; }
+    .description strong { color: #e8e0f0; }
+
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.5rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .legend-swatch {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
   </style>
 </head>
 <body>
+  <!-- ============================================================
+       SVG DEFINITIONS — used by all the variant displays below
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Vitruvian-style figure: head, torso, two arm positions, two leg
+           positions, inscribed circle and square. Designed at scale 1; will
+           be transformed for placement. Centered at (0, 0) with head at -13. -->
+      <g id="vit-figure">
+        <!-- Vitruvian inscribed circle -->
+        <circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.45"/>
+        <!-- Vitruvian inscribed square (45° rotated for visual balance — not strictly accurate, but readable) -->
+        <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.3"/>
+        <!-- Head -->
+        <circle cx="0" cy="-14" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <!-- Torso -->
+        <line x1="0" y1="-11" x2="0" y2="6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Arms: horizontal (square pose) -->
+        <line x1="-18" y1="-4" x2="18" y2="-4" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.95"/>
+        <!-- Arms: raised up-and-out (circle pose) -->
+        <line x1="0" y1="-8" x2="-15" y2="-17" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.85"/>
+        <line x1="0" y1="-8" x2="15" y2="-17" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.85"/>
+        <!-- Legs: together (square pose) -->
+        <line x1="0" y1="6" x2="-3" y2="20" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.95"/>
+        <line x1="0" y1="6" x2="3" y2="20" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.95"/>
+        <!-- Legs: spread (circle pose) -->
+        <line x1="0" y1="6" x2="-13" y2="18" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.85"/>
+        <line x1="0" y1="6" x2="13" y2="18" stroke="currentColor" stroke-width="1.0" stroke-linecap="round" opacity="0.85"/>
+      </g>
+
+      <!-- The full mark: astral wheel with 12 wedges + figures + rings -->
+      <g id="esoyou-mark">
+        <!-- Outer rim ring -->
+        <circle cx="200" cy="200" r="195" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>
+        <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.35"/>
+
+        <!-- 12 radial dividers (every 30°), from inner ring to sign-band ring -->
+        <g stroke="currentColor" stroke-width="0.4" opacity="0.4">
+          <line x1="200" y1="55"  x2="200" y2="145"/>
+          <line x1="200" y1="345" x2="200" y2="255"/>
+          <line x1="55"  y1="200" x2="145" y2="200"/>
+          <line x1="345" y1="200" x2="255" y2="200"/>
+
+          <line x1="277.5" y1="65.6"  x2="232.5" y2="143.4"/>
+          <line x1="334.4" y1="122.5" x2="256.6" y2="167.5"/>
+          <line x1="334.4" y1="277.5" x2="256.6" y2="232.5"/>
+          <line x1="277.5" y1="334.4" x2="232.5" y2="256.6"/>
+          <line x1="122.5" y1="334.4" x2="167.5" y2="256.6"/>
+          <line x1="65.6"  y1="277.5" x2="143.4" y2="232.5"/>
+          <line x1="65.6"  y1="122.5" x2="143.4" y2="167.5"/>
+          <line x1="122.5" y1="65.6"  x2="167.5" y2="143.4"/>
+        </g>
+
+        <!-- Inner ring (separator between wedges and core) -->
+        <circle cx="200" cy="200" r="50" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+
+        <!-- Cross axes inside core -->
+        <line x1="200" y1="155" x2="200" y2="245" stroke="currentColor" stroke-width="0.3" opacity="0.35"/>
+        <line x1="155" y1="200" x2="245" y2="200" stroke="currentColor" stroke-width="0.3" opacity="0.35"/>
+
+        <!-- Center seal: small concentric ornament -->
+        <circle cx="200" cy="200" r="10" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.7"/>
+        <circle cx="200" cy="200" r="3"  fill="currentColor" opacity="0.85"/>
+
+        <!-- ============================================================
+             12 Vitruvian figures, one per zodiac sign.
+             Aries at 9 o'clock (left), going counter-clockwise (downward
+             into Taurus, Gemini, Cancer at bottom, etc.) — true natal-chart
+             order. Color = traditional sign color, tuned for visibility on
+             a deep purple background.
+             ============================================================ -->
+        <!-- Aries (vermelho) -->
+        <g transform="translate(75, 200) rotate(270)" style="color:#e85a4f"><use href="#vit-figure"/></g>
+        <!-- Taurus (lilás) -->
+        <g transform="translate(92, 263) rotate(240)" style="color:#c1a7e0"><use href="#vit-figure"/></g>
+        <!-- Gemini (laranja) -->
+        <g transform="translate(138, 308) rotate(210)" style="color:#f4a836"><use href="#vit-figure"/></g>
+        <!-- Cancer (branco perolado) -->
+        <g transform="translate(200, 325) rotate(180)" style="color:#f0eee8"><use href="#vit-figure"/></g>
+        <!-- Leo (dourado) -->
+        <g transform="translate(263, 308) rotate(150)" style="color:#e8c34a"><use href="#vit-figure"/></g>
+        <!-- Virgo (verde) -->
+        <g transform="translate(308, 263) rotate(120)" style="color:#7ab560"><use href="#vit-figure"/></g>
+        <!-- Libra (azul claro) -->
+        <g transform="translate(325, 200) rotate(90)" style="color:#7cc4e8"><use href="#vit-figure"/></g>
+        <!-- Scorpio (preto profundo, com leve brilho carmesim) -->
+        <g transform="translate(308, 138) rotate(60)" style="color:#5a3245"><use href="#vit-figure"/></g>
+        <!-- Sagittarius (roxo) -->
+        <g transform="translate(263, 92) rotate(30)" style="color:#a07acc"><use href="#vit-figure"/></g>
+        <!-- Capricorn (cinza prateado) -->
+        <g transform="translate(200, 75) rotate(0)" style="color:#b6b6c0"><use href="#vit-figure"/></g>
+        <!-- Aquarius (azul) -->
+        <g transform="translate(138, 92) rotate(330)" style="color:#5d8fdc"><use href="#vit-figure"/></g>
+        <!-- Pisces (rosa) -->
+        <g transform="translate(92, 138) rotate(300)" style="color:#e8a3c0"><use href="#vit-figure"/></g>
+      </g>
+    </defs>
+  </svg>
+
   <main>
-    <h1>EsoYou — preview do logo</h1>
-    <p class="sub">12 Homens Vitruvianos dispostos em círculo, cada um em uma cor da roda cromática. Versão SVG — escalável, leve (~3 KB), funciona em qualquer tamanho.</p>
+    <!-- =========== HERO =========== -->
+    <div class="hero">
+      <svg viewBox="0 0 400 400" width="320" height="320" style="color:#d4d4e2; filter: drop-shadow(0 0 30px rgba(192,192,216,0.15))">
+        <use href="#esoyou-mark"/>
+      </svg>
+      <p class="brand-tag">Esoteric You</p>
+      <p class="brand-name">EsoYou</p>
+    </div>
 
-    <!-- Logo SVG definition (used in all variants) -->
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-      <defs>
-        <g id="vitruvian-figure">
-          <!-- The Vitruvian circle -->
-          <circle cx="0" cy="0" r="20" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.35"/>
-          <!-- Head -->
-          <circle cx="0" cy="-13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
-          <!-- Torso -->
-          <line x1="0" y1="-9.5" x2="0" y2="7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <!-- Arms (horizontal) -->
-          <line x1="-16" y1="-2" x2="16" y2="-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <!-- Legs (spread V) -->
-          <line x1="0" y1="7.5" x2="-11" y2="19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <line x1="0" y1="7.5" x2="11" y2="19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </g>
+    <p class="sub">Roxo profundo · prata · 12 Vitruvianos · cores tradicionais dos signos</p>
 
-        <g id="esoyou-mark" data-base="200">
-          <!-- Outer ring -->
-          <circle cx="200" cy="200" r="190" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
-          <circle cx="200" cy="200" r="172" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.4" stroke-dasharray="1 3"/>
-          <!-- Center mark -->
-          <circle cx="200" cy="200" r="6" fill="currentColor" opacity="0.7"/>
-          <circle cx="200" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+    <!-- =========== VARIATIONS =========== -->
+    <h2>Variantes</h2>
 
-          <!-- 12 figures around the circle. radius = 150, starting at top (angle -90), 30° apart. -->
-          <!-- Hue advances 30° per figure (full color wheel). -->
-          <g transform="translate(200, 50) rotate(0)"   style="color:hsl(0, 75%, 62%)">  <use href="#vitruvian-figure"/></g>
-          <g transform="translate(275, 70) rotate(30)"  style="color:hsl(30, 75%, 60%)"> <use href="#vitruvian-figure"/></g>
-          <g transform="translate(330, 125) rotate(60)" style="color:hsl(50, 78%, 55%)"> <use href="#vitruvian-figure"/></g>
-          <g transform="translate(350, 200) rotate(90)" style="color:hsl(80, 60%, 52%)"> <use href="#vitruvian-figure"/></g>
-          <g transform="translate(330, 275) rotate(120)" style="color:hsl(140, 55%, 48%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(275, 330) rotate(150)" style="color:hsl(170, 60%, 45%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(200, 350) rotate(180)" style="color:hsl(200, 70%, 55%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(125, 330) rotate(210)" style="color:hsl(225, 70%, 60%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(70, 275) rotate(240)" style="color:hsl(255, 60%, 60%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(50, 200) rotate(270)" style="color:hsl(280, 60%, 55%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(70, 125) rotate(300)" style="color:hsl(310, 65%, 55%)"><use href="#vitruvian-figure"/></g>
-          <g transform="translate(125, 70) rotate(330)" style="color:hsl(340, 70%, 60%)"><use href="#vitruvian-figure"/></g>
-        </g>
-      </defs>
-    </svg>
+    <div class="grid-2">
+      <div class="panel silver-on-purple">
+        <span class="label">Versão principal · prata em roxo</span>
+        <svg viewBox="0 0 400 400" width="220" height="220" style="color:#d4d4e2">
+          <use href="#esoyou-mark"/>
+        </svg>
+        <p class="brand-tag">Para fundo escuro</p>
+      </div>
 
-    <!-- Variant 1: Light bg -->
-    <div class="grid">
       <div class="panel light">
-        <span class="label">Fundo claro</span>
+        <span class="label">Versão clara · ônix em creme</span>
         <svg viewBox="0 0 400 400" width="220" height="220" style="color:#1c1618">
           <use href="#esoyou-mark"/>
         </svg>
-        <div class="brand-block">
-          <p class="brand-tag">Versão clara</p>
-          <p class="brand-name">EsoYou</p>
-          <p class="brand-tag" style="color:#7d6f74">Esoteric You</p>
-        </div>
-      </div>
-
-      <div class="panel cream">
-        <span class="label">Creme (tema atual)</span>
-        <svg viewBox="0 0 400 400" width="220" height="220" style="color:#1c1618">
-          <use href="#esoyou-mark"/>
-        </svg>
-        <div class="brand-block">
-          <p class="brand-tag">Tom AAP</p>
-          <p class="brand-name">EsoYou</p>
-          <p class="brand-tag" style="color:#7d6f74">Esoteric You</p>
-        </div>
+        <p class="brand-tag" style="color:#7d6f74">Para fundo claro</p>
       </div>
     </div>
 
-    <!-- Variant 2: Dark + gradient -->
-    <div class="grid">
-      <div class="panel dark">
-        <span class="label" style="color:#a89bc1">Fundo escuro</span>
-        <svg viewBox="0 0 400 400" width="220" height="220" style="color:#faf9f6">
-          <use href="#esoyou-mark"/>
-        </svg>
-        <div class="brand-block">
-          <p class="brand-tag" style="color:#a89bc1">Versão escura</p>
-          <p class="brand-name">EsoYou</p>
-          <p class="brand-tag" style="color:#a89bc1">Esoteric You</p>
-        </div>
-      </div>
+    <!-- =========== SCALES =========== -->
+    <h2>Em diferentes tamanhos</h2>
 
-      <div class="panel gradient">
-        <span class="label" style="color:#d4af37">Místico</span>
-        <svg viewBox="0 0 400 400" width="220" height="220" style="color:#d4af37">
-          <use href="#esoyou-mark"/>
-        </svg>
-        <div class="brand-block">
-          <p class="brand-tag" style="color:#d4af37">Roxo + dourado</p>
-          <p class="brand-name" style="color:#fff">EsoYou</p>
-          <p class="brand-tag" style="color:#d4af37">Esoteric You</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scaling test -->
-    <h3 style="font-family:'Cormorant Garamond', serif; font-weight: 500; font-size: 1.4rem; margin: 2rem 0 1rem">Em diferentes tamanhos</h3>
     <div class="scaled-row">
-      <div class="scale-item"><svg viewBox="0 0 400 400" width="32" height="32" style="color:#1c1618"><use href="#esoyou-mark"/></svg><small>32px (favicon)</small></div>
-      <div class="scale-item"><svg viewBox="0 0 400 400" width="64" height="64" style="color:#1c1618"><use href="#esoyou-mark"/></svg><small>64px (header)</small></div>
-      <div class="scale-item"><svg viewBox="0 0 400 400" width="128" height="128" style="color:#1c1618"><use href="#esoyou-mark"/></svg><small>128px (login)</small></div>
-      <div class="scale-item"><svg viewBox="0 0 400 400" width="200" height="200" style="color:#1c1618"><use href="#esoyou-mark"/></svg><small>200px (hero)</small></div>
+      <div class="scale-item">
+        <svg viewBox="0 0 400 400" width="32" height="32" style="color:#d4d4e2"><use href="#esoyou-mark"/></svg>
+        <small>32 px · favicon</small>
+      </div>
+      <div class="scale-item">
+        <svg viewBox="0 0 400 400" width="64" height="64" style="color:#d4d4e2"><use href="#esoyou-mark"/></svg>
+        <small>64 px · header</small>
+      </div>
+      <div class="scale-item">
+        <svg viewBox="0 0 400 400" width="128" height="128" style="color:#d4d4e2"><use href="#esoyou-mark"/></svg>
+        <small>128 px · login</small>
+      </div>
+      <div class="scale-item">
+        <svg viewBox="0 0 400 400" width="200" height="200" style="color:#d4d4e2"><use href="#esoyou-mark"/></svg>
+        <small>200 px · destaque</small>
+      </div>
     </div>
 
+    <!-- =========== EXPLAINER =========== -->
     <div class="description">
-      <h3>Conceito</h3>
-      <p><strong>O Homem Vitruviano × 12.</strong> Cada figura representa uma faceta esotérica que vamos eventualmente cobrir no app: as 12 modalidades, as 12 horas, os 12 raios, os 12 signos. As cores percorrem a roda cromática inteira (0° → 360°), simbolizando a completude e a integração.</p>
+      <h3>O conceito</h3>
+      <p>O <strong>Homem Vitruviano</strong> — o humano universal, encaixado no círculo e no quadrado, simboliza a integração do que somos. Aqui ele aparece <strong>doze vezes</strong>, um para cada signo do zodíaco, formando um <strong>mapa astral simbólico</strong>: 12 wedges de 30°, dois anéis concêntricos, eixos cruzando o centro.</p>
+      <p>Cada figura veste a <strong>cor tradicional do seu signo</strong>, ajustada para harmonizar com o fundo roxo profundo. As linhas do mapa são em <strong>prata</strong> — feminina, lunar, reflexiva — substituindo o ouro solar.</p>
+
+      <h3 style="margin-top:1.5rem">Cores por signo</h3>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:#e85a4f"></span> Áries · vermelho</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#c1a7e0"></span> Touro · lilás</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#f4a836"></span> Gêmeos · laranja</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#f0eee8"></span> Câncer · branco</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#e8c34a"></span> Leão · dourado</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#7ab560"></span> Virgem · verde</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#7cc4e8"></span> Libra · azul claro</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#5a3245"></span> Escorpião · preto carmesim</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#a07acc"></span> Sagitário · roxo</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#b6b6c0"></span> Capricórnio · cinza</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#5d8fdc"></span> Aquário · azul</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#e8a3c0"></span> Peixes · rosa</div>
+      </div>
+
+      <h3 style="margin-top:1.5rem">Detalhes da figura Vitruviana</h3>
       <ul>
-        <li>O <strong>círculo central</strong> é o "núcleo" — a pessoa</li>
-        <li>O <strong>anel pontilhado</strong> sugere movimento, ciclo, tempo</li>
-        <li>As <strong>12 figuras radiais</strong> com a cabeça apontando para fora — emanando do centro</li>
-        <li>As <strong>cores</strong> formam um espectro contínuo, não 12 cores arbitrárias</li>
+        <li><strong>Quatro braços, quatro pernas</strong> — a icônica sobreposição das duas poses (estendida e elevada / juntas e abertas)</li>
+        <li><strong>Círculo</strong> e <strong>quadrado</strong> inscritos — geometria sagrada do humano universal</li>
+        <li>Cabeça apontando <strong>para fora</strong> do círculo — emanando do centro, como raios solares</li>
+        <li>Tipografia <em>Cormorant Garamond</em> — serifada, antiga, evoca manuscritos esotéricos</li>
       </ul>
-      <p style="margin-top: 0.75rem">Esse SVG é um <em>protótipo</em>. Estilizei a figura em vez de tentar reproduzir o desenho exato do Da Vinci — fica mais legível em tamanhos pequenos. Se quiser uma versão mais elaborada (com hachura, detalhe renascentista), use a IA com o prompt na próxima seção.</p>
     </div>
+
+    <p class="sub" style="margin-top: 3rem">Este preview está em <code style="color:#c0c0d8">marcioapps.pages.dev/branding/preview.html</code></p>
   </main>
 </body>
 </html>
