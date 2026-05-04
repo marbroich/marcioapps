@@ -209,6 +209,81 @@
           </g>
         </g>
 
+        <!-- Just the head (used inline in the wordmark lockup) -->
+        <g id="head-only">
+          <circle cx="200" cy="125" r="38" fill="none" stroke="currentColor" stroke-width="3.5"/>
+        </g>
+
+        <g id="head-full-neon" filter="url(#neon-glow)">
+          <g transform="translate(200 125) scale(1.14) translate(-200 -125)" style="color:#ff3aa1"><use href="#head-only"/></g>
+          <g transform="translate(200 125) scale(1.07) translate(-200 -125)" style="color:#ffe833"><use href="#head-only"/></g>
+          <g transform="translate(200 125) scale(1.00) translate(-200 -125)" style="color:#3aff7a"><use href="#head-only"/></g>
+          <g transform="translate(200 125) scale(0.93) translate(-200 -125)" style="color:#a85aff"><use href="#head-only"/></g>
+          <g transform="translate(200 125) scale(0.86) translate(-200 -125)" style="color:#3affd0"><use href="#head-only"/></g>
+        </g>
+
+        <!-- Just the body (used below the wordmark in the lockup) -->
+        <g id="body-only">
+          <path d="M 180 158 L 90 195 L 168 215 L 135 335 L 200 295 L 265 335 L 232 215 L 310 195 L 220 158 Z"
+                fill="none" stroke="currentColor" stroke-width="3.5"
+                stroke-linejoin="round" stroke-linecap="round"/>
+        </g>
+
+        <g id="body-full-neon" filter="url(#neon-glow)">
+          <g transform="translate(200 246) scale(1.14) translate(-200 -246)" style="color:#ff3aa1"><use href="#body-only"/></g>
+          <g transform="translate(200 246) scale(1.07) translate(-200 -246)" style="color:#ffe833"><use href="#body-only"/></g>
+          <g transform="translate(200 246) scale(1.00) translate(-200 -246)" style="color:#3aff7a"><use href="#body-only"/></g>
+          <g transform="translate(200 246) scale(0.93) translate(-200 -246)" style="color:#a85aff"><use href="#body-only"/></g>
+          <g transform="translate(200 246) scale(0.86) translate(-200 -246)" style="color:#3affd0"><use href="#body-only"/></g>
+        </g>
+
+        <!-- ============================================================
+             ALT F — HYBRID: Gemini star pose + my clean geometry
+             - Arms reaching UP-AND-OUT (Gemini-style, makes the 4-point
+               star silhouette pop)
+             - Legs going DOWN-AND-OUT (sharper points, more star-like)
+             - Round head (no face — keeps it readable at favicon size)
+             - Inner heart-star at chest (Gemini detail)
+             - 5 neon layers + glow filter
+             ============================================================ -->
+        <g id="figure-base-hybrid">
+          <!-- Round head -->
+          <circle cx="200" cy="105" r="40" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          <!-- 4-point starburst body: arms up-and-out + legs down-and-out -->
+          <!-- Path goes clockwise from right shoulder -->
+          <path d="M 232 142
+                   L 340 80
+                   L 248 175
+                   L 245 235
+                   L 320 365
+                   L 200 285
+                   L 80 365
+                   L 155 235
+                   L 152 175
+                   L 60 80
+                   L 168 142 Z"
+                fill="none" stroke="currentColor" stroke-width="3.5"
+                stroke-linejoin="round" stroke-linecap="round"/>
+        </g>
+
+        <!-- Inner heart-star (small 5-point star at chest, single magenta layer) -->
+        <g id="inner-heart-star">
+          <path d="M 200 178 L 205.3 188.7 L 217.1 190.4 L 208.6 198.8 L 210.6 210.6 L 200 205 L 189.4 210.6 L 191.4 198.8 L 182.9 190.4 L 194.7 188.7 Z"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round"/>
+        </g>
+
+        <g id="alt-f" filter="url(#neon-glow)">
+          <!-- 5 neon layers, scaled around figure visual center (200, 215) -->
+          <g transform="translate(200 215) scale(1.14) translate(-200 -215)" style="color:#ff3aa1"><use href="#figure-base-hybrid"/></g>
+          <g transform="translate(200 215) scale(1.07) translate(-200 -215)" style="color:#ffe833"><use href="#figure-base-hybrid"/></g>
+          <g transform="translate(200 215) scale(1.00) translate(-200 -215)" style="color:#3aff7a"><use href="#figure-base-hybrid"/></g>
+          <g transform="translate(200 215) scale(0.93) translate(-200 -215)" style="color:#a85aff"><use href="#figure-base-hybrid"/></g>
+          <g transform="translate(200 215) scale(0.86) translate(-200 -215)" style="color:#3affd0"><use href="#figure-base-hybrid"/></g>
+          <!-- Inner heart-star, in magenta on top -->
+          <g style="color:#ff3aa1"><use href="#inner-heart-star"/></g>
+        </g>
+
         <!-- =========== ALT A — CONSTELLATION PERSON =========== -->
         <g id="alt-a">
           <!-- Outer thin circle -->
@@ -354,6 +429,36 @@
         </g>
       </defs>
     </svg>
+
+    <!-- ============================================================
+         ALT F — HYBRID (Gemini pose + my geometry)
+         ============================================================ -->
+    <section class="alt" style="border-color:rgba(58,255,122,0.35); box-shadow:0 0 50px rgba(58,255,122,0.1);">
+      <div class="alt-head">
+        <span class="alt-letter" style="background:linear-gradient(180deg,#ff3aa1,#ffe833,#3aff7a,#a85aff,#3affd0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★</span>
+        <span class="alt-tag" style="color:#3aff7a">novo · híbrido</span>
+      </div>
+      <h2 class="alt-name">Estrela-Pessoa Híbrida</h2>
+      <p class="alt-desc">
+        Combinação do melhor das duas ideias. Da figura do Gemini: <strong>braços
+        para cima-e-pra-fora</strong> (em vez de horizontais), criando uma silhueta
+        de estrela de 4 pontas mais "starburst", e uma <strong>estrelinha-coração</strong>
+        no peito (detalhe simbólico de núcleo). Da nossa: <strong>cabeça redonda
+        sem rosto</strong> (continua legível no tamanho favicon), <strong>geometria
+        limpa e simétrica</strong>, e camadas concêntricas precisas.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32"><use href="#alt-f"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64"><use href="#alt-f"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128"><use href="#alt-f"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200"><use href="#alt-f"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="140" height="140"><use href="#alt-f"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
 
     <!-- ============================================================
          ALT E — STAR-PERSON NEON LAYERS (newest)
