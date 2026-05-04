@@ -1,12 +1,12 @@
 {
-  "version": "v260504.04 3:29p",
-  "release": 4,
-  "sha": "0f86bc4",
-  "fullSha": "0f86bc4e802c065832ba83e84c4bf586d652a9cc",
+  "version": "v260504.05 3:50p",
+  "release": 5,
+  "sha": "679b7ec",
+  "fullSha": "679b7ec9d08d8439e698a8843ebd34148e87145f",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T12:29:12-03:00",
-  "commits": [{"sha":"0f86bc4","message":"design(branding): astral chart layout with silver-on-purple palette","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T12:49:50-03:00",
+  "commits": [{"sha":"679b7ec","message":"design(branding): lighter midnight blue + denser starfield","author":"Marcio Simao"}]
 }
