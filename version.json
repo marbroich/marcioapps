@@ -1,12 +1,12 @@
 {
-  "version": "v260504.08 7:30p",
-  "release": 8,
-  "sha": "7f89fbd",
-  "fullSha": "7f89fbddddd7fca3d6c77a1153acc32bf01c9731",
+  "version": "v260504.09 9:56p",
+  "release": 9,
+  "sha": "2559709",
+  "fullSha": "255970903ce4117a22490c7ec2d1c8bea26c6068",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T16:30:27-03:00",
-  "commits": [{"sha":"7f89fbd","message":"design(branding): add 4 logo alternatives comparison page","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T18:56:33-03:00",
+  "commits": [{"sha":"2559709","message":"design(branding): add Alt E — Star-Person with 5 neon color layers","author":"Marcio Simao"}]
 }
