@@ -1,12 +1,12 @@
 {
-  "version": "v260504.09 9:56p",
-  "release": 9,
-  "sha": "2559709",
-  "fullSha": "255970903ce4117a22490c7ec2d1c8bea26c6068",
+  "version": "v260504.10 10:03p",
+  "release": 10,
+  "sha": "99132bb",
+  "fullSha": "99132bb847f55132a030fa9d63d179ae2f5ca1d1",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T18:56:33-03:00",
-  "commits": [{"sha":"2559709","message":"design(branding): add Alt E — Star-Person with 5 neon color layers","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:03:08-03:00",
+  "commits": [{"sha":"99132bb","message":"design(branding): refine Alt E — slimmer human-star body, no head point, Gemini palette","author":"Marcio Simao"}]
 }
