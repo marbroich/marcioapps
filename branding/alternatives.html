@@ -147,6 +147,45 @@
          ============================================================ -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
       <defs>
+        <!-- =========== ALT E — STAR-PERSON NEON LAYERS (NEW) =========== -->
+        <!--
+             Figure: round head (circle) + 5-pointed star body.
+             5 concentric outline layers in neon colors, each successively smaller,
+             produces a pulsing-rainbow-aura effect. Outer layer drawn first
+             (behind), innermost last (on top).
+        -->
+        <g id="figure-base-neon">
+          <!-- Head: round, sits above the star top point -->
+          <circle cx="200" cy="100" r="28" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <!-- Body: 5-pointed star, top point connects to head bottom -->
+          <path d="M 200,130 L 232.4,200.5 L 308.6,209 L 250.6,260.4 L 268.6,335 L 200,295 L 131.4,335 L 149.4,260.4 L 91.4,209 L 167.6,200.5 Z"
+                fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        </g>
+
+        <g id="alt-e">
+          <!-- Background: subtle outer glow ring -->
+          <circle cx="200" cy="218" r="180" fill="none" stroke="#a8b4d4" stroke-width="0.5" opacity="0.25"/>
+
+          <!-- 5 layers, scaled around the figure's visual center (200, 218).
+               Outermost (largest scale, drawn first) — pink
+               Innermost (smallest scale, drawn last) — cyan -->
+          <g transform="translate(200 218) scale(1.18) translate(-200 -218)" style="color:#ff3aa1">
+            <use href="#figure-base-neon"/>
+          </g>
+          <g transform="translate(200 218) scale(1.10) translate(-200 -218)" style="color:#ff8a3a">
+            <use href="#figure-base-neon"/>
+          </g>
+          <g transform="translate(200 218) scale(1.02) translate(-200 -218)" style="color:#ffd83a">
+            <use href="#figure-base-neon"/>
+          </g>
+          <g transform="translate(200 218) scale(0.94) translate(-200 -218)" style="color:#a85aff">
+            <use href="#figure-base-neon"/>
+          </g>
+          <g transform="translate(200 218) scale(0.86) translate(-200 -218)" style="color:#3affd0">
+            <use href="#figure-base-neon"/>
+          </g>
+        </g>
+
         <!-- =========== ALT A — CONSTELLATION PERSON =========== -->
         <g id="alt-a">
           <!-- Outer thin circle -->
@@ -292,6 +331,36 @@
         </g>
       </defs>
     </svg>
+
+    <!-- ============================================================
+         ALT E — STAR-PERSON NEON LAYERS (newest)
+         ============================================================ -->
+    <section class="alt" style="border-color:rgba(255,138,58,0.3); box-shadow:0 0 40px rgba(255,138,58,0.08);">
+      <div class="alt-head">
+        <span class="alt-letter" style="background:linear-gradient(180deg,#ff3aa1,#ffd83a,#3affd0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★</span>
+        <span class="alt-tag" style="color:#ffd83a">novo · sua sugestão</span>
+      </div>
+      <h2 class="alt-name">Estrela-Pessoa Neon</h2>
+      <p class="alt-desc">
+        Cabeça <strong>arredondada</strong> + corpo em forma de <strong>estrela de 5 pontas</strong>
+        (braços e pernas como 4 das pontas, e a 5ª apontando pra baixo). Traçado com
+        <strong>5 camadas concêntricas em cores neon</strong> — magenta, laranja, amarelo, roxo, ciano —
+        criando um efeito de aura pulsante. A cor mais externa é a mais quente, vai
+        esfriando até o ciano no centro. Conecta com sua visão de avatar único e tem
+        muito mais presença visual.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32"><use href="#alt-e"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64"><use href="#alt-e"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128"><use href="#alt-e"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200"><use href="#alt-e"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="120" height="120"><use href="#alt-e"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
 
     <!-- ============================================================
          ALT A — CONSTELLATION PERSON
