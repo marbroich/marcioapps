@@ -1,12 +1,12 @@
 {
-  "version": "v260504.05 3:50p",
-  "release": 5,
-  "sha": "679b7ec",
-  "fullSha": "679b7ec9d08d8439e698a8843ebd34148e87145f",
+  "version": "v260504.06 5:11p",
+  "release": 6,
+  "sha": "45eda09",
+  "fullSha": "45eda093f0e73fd4fb886175e48aca7d0784a7ef",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T12:49:50-03:00",
-  "commits": [{"sha":"679b7ec","message":"design(branding): lighter midnight blue + denser starfield","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T14:11:32-03:00",
+  "commits": [{"sha":"45eda09","message":"ci: document SUPABASE_DB_URL as intentionally absent (offline mode)","author":"Marcio Simao"}]
 }
