@@ -1,12 +1,12 @@
 {
-  "version": "v260504.06 5:11p",
-  "release": 6,
-  "sha": "45eda09",
-  "fullSha": "45eda093f0e73fd4fb886175e48aca7d0784a7ef",
+  "version": "v260504.07 5:43p",
+  "release": 7,
+  "sha": "b59d59c",
+  "fullSha": "b59d59c6aa908287fccf1ea54a797680be18db5a",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T14:11:32-03:00",
-  "commits": [{"sha":"45eda09","message":"ci: document SUPABASE_DB_URL as intentionally absent (offline mode)","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T14:43:11-03:00",
+  "commits": [{"sha":"b59d59c","message":"feat(branding): apply EsoYou identity — logo, name, slogan, night-sky theme","author":"Marcio Simao"}]
 }
