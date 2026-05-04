@@ -1,12 +1,12 @@
 {
-  "version": "v260504.12 10:18p",
-  "release": 12,
-  "sha": "0e49a95",
-  "fullSha": "0e49a955477b8d190608c487222ea3c746a8f311",
+  "version": "v260504.13 10:27p",
+  "release": 13,
+  "sha": "4a59e5d",
+  "fullSha": "4a59e5dd6cb1840346362d6b83ee4ba782a3ee90",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:17:51-03:00",
-  "commits": [{"sha":"0e49a95","message":"design(branding): add 3 wordmark lockup mockups (figure + EsoYou)","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:27:36-03:00",
+  "commits": [{"sha":"4a59e5d","message":"design(branding): remove inner heart-star + show full You in lockup 2","author":"Marcio Simao"}]
 }
