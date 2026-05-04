@@ -1,12 +1,12 @@
 {
-  "version": "v260504.16 10:50p",
-  "release": 16,
-  "sha": "9d064c1",
-  "fullSha": "9d064c1e5beb6fdf30789f77589e675cf58e5978",
+  "version": "v260504.17 10:55p",
+  "release": 17,
+  "sha": "5d828e0",
+  "fullSha": "5d828e0c40f671a432f7603d414e0b5c63e4c87b",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:50:20-03:00",
-  "commits": [{"sha":"9d064c1","message":"design(branding): high-arch wings over the words + bigger figure","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:55:07-03:00",
+  "commits": [{"sha":"5d828e0","message":"design(branding): restore previous arms shape, drop words below arm level","author":"Marcio Simao"}]
 }
