@@ -10,15 +10,47 @@
     body {
       font-family: 'DM Sans', sans-serif;
       color: #e8edf5;
-      background: #050a1c;
+      background: #1a2a5c;
       background-image:
-        radial-gradient(ellipse at 30% 10%, rgba(40, 60, 110, 0.4) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 80%, rgba(20, 40, 90, 0.5) 0%, transparent 60%),
-        linear-gradient(180deg, #050a1c 0%, #0a1230 50%, #0e1a40 100%);
+        radial-gradient(ellipse at 30% 10%, rgba(80, 110, 180, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(40, 70, 140, 0.4) 0%, transparent 60%),
+        linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 50%, #243878 100%);
       min-height: 100vh;
       line-height: 1.55;
+      position: relative;
+      overflow-x: hidden;
     }
-    main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 8rem; }
+    /* Page-level starfield — sprinkled silver dots scattered behind everything */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 12% 8%, #e8edf5 50%, transparent),
+        radial-gradient(1px 1px at 28% 22%, #d8dde8 50%, transparent),
+        radial-gradient(1.4px 1.4px at 47% 6%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 65% 14%, #d8dde8 50%, transparent),
+        radial-gradient(1.2px 1.2px at 82% 26%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 92% 12%, #d8dde8 50%, transparent),
+        radial-gradient(1.5px 1.5px at 6% 38%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 22% 52%, #d8dde8 50%, transparent),
+        radial-gradient(1.3px 1.3px at 88% 48%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 96% 62%, #d8dde8 50%, transparent),
+        radial-gradient(1px 1px at 8% 72%, #d8dde8 50%, transparent),
+        radial-gradient(1.4px 1.4px at 18% 88%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 36% 94%, #d8dde8 50%, transparent),
+        radial-gradient(1.2px 1.2px at 58% 82%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 76% 92%, #d8dde8 50%, transparent),
+        radial-gradient(1.5px 1.5px at 90% 78%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 50% 50%, #d8dde8 30%, transparent),
+        radial-gradient(1px 1px at 38% 38%, #d8dde8 40%, transparent),
+        radial-gradient(1px 1px at 70% 60%, #d8dde8 40%, transparent);
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      z-index: 0;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 8rem; position: relative; z-index: 1; }
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
@@ -84,7 +116,7 @@
       gap: 1rem;
     }
     .panel.light { background: #faf9f6; color: #1c1618; border-color: rgba(0,0,0,0.06); }
-    .panel.midnight { background: linear-gradient(160deg, #050a1c 0%, #0e1a40 100%); }
+    .panel.midnight { background: linear-gradient(160deg, #0e1a3c 0%, #243878 100%); }
     .label {
       font-size: 0.7rem;
       letter-spacing: 0.18em;
@@ -157,6 +189,7 @@
         <!-- Background stars (only visible on dark backgrounds — they're
              subtle silver dots scattered behind the figures) -->
         <g class="bg-stars" stroke="currentColor" fill="currentColor">
+          <!-- Original 17 small stars -->
           <circle cx="60"  cy="80"  r="0.8" opacity="0.7"/>
           <circle cx="120" cy="40"  r="0.6" opacity="0.5"/>
           <circle cx="180" cy="25"  r="0.9" opacity="0.85"/>
@@ -174,12 +207,43 @@
           <circle cx="35"  cy="120" r="0.9" opacity="0.85"/>
           <circle cx="220" cy="60"  r="0.5" opacity="0.4"/>
           <circle cx="245" cy="350" r="0.6" opacity="0.55"/>
-          <!-- Sparkle stars (slightly bigger, with cross shape) -->
-          <g transform="translate(50, 50)" opacity="0.7"><use href="#star-sparkle"/></g>
+          <!-- 25 NEW stars — denser scatter, varied sizes and brightnesses -->
+          <circle cx="80"  cy="55"  r="0.55" opacity="0.5"/>
+          <circle cx="155" cy="60"  r="0.7"  opacity="0.65"/>
+          <circle cx="200" cy="10"  r="0.5"  opacity="0.4"/>
+          <circle cx="248" cy="22"  r="0.85" opacity="0.75"/>
+          <circle cx="320" cy="48"  r="0.5"  opacity="0.5"/>
+          <circle cx="360" cy="92"  r="0.65" opacity="0.55"/>
+          <circle cx="392" cy="160" r="0.55" opacity="0.5"/>
+          <circle cx="378" cy="232" r="0.8"  opacity="0.7"/>
+          <circle cx="395" cy="320" r="0.5"  opacity="0.45"/>
+          <circle cx="358" cy="370" r="0.7"  opacity="0.6"/>
+          <circle cx="305" cy="385" r="0.55" opacity="0.5"/>
+          <circle cx="220" cy="395" r="0.85" opacity="0.75"/>
+          <circle cx="135" cy="395" r="0.5"  opacity="0.45"/>
+          <circle cx="60"  cy="375" r="0.65" opacity="0.6"/>
+          <circle cx="12"  cy="320" r="0.55" opacity="0.5"/>
+          <circle cx="8"   cy="225" r="0.7"  opacity="0.65"/>
+          <circle cx="10"  cy="148" r="0.5"  opacity="0.4"/>
+          <circle cx="5"   cy="80"  r="0.85" opacity="0.7"/>
+          <circle cx="48"  cy="158" r="0.45" opacity="0.4"/>
+          <circle cx="100" cy="95"  r="0.5"  opacity="0.45"/>
+          <circle cx="295" cy="78"  r="0.55" opacity="0.5"/>
+          <circle cx="178" cy="318" r="0.5"  opacity="0.45"/>
+          <circle cx="105" cy="278" r="0.45" opacity="0.4"/>
+          <circle cx="305" cy="135" r="0.5"  opacity="0.45"/>
+          <circle cx="155" cy="115" r="0.4"  opacity="0.35"/>
+          <!-- Sparkle stars — original 5 plus 5 more for richer density -->
+          <g transform="translate(50, 50)"   opacity="0.7"><use href="#star-sparkle"/></g>
           <g transform="translate(355, 105)" opacity="0.65"><use href="#star-sparkle"/></g>
           <g transform="translate(360, 305)" opacity="0.6"><use href="#star-sparkle"/></g>
-          <g transform="translate(45, 350)" opacity="0.7"><use href="#star-sparkle"/></g>
+          <g transform="translate(45, 350)"  opacity="0.7"><use href="#star-sparkle"/></g>
           <g transform="translate(105, 380)" opacity="0.55"><use href="#star-sparkle"/></g>
+          <g transform="translate(255, 18)"  opacity="0.7"><use href="#star-sparkle"/></g>
+          <g transform="translate(388, 200)" opacity="0.65"><use href="#star-sparkle"/></g>
+          <g transform="translate(248, 388)" opacity="0.6"><use href="#star-sparkle"/></g>
+          <g transform="translate(15, 248)"  opacity="0.65"><use href="#star-sparkle"/></g>
+          <g transform="translate(180, 5)"   opacity="0.5"><use href="#star-sparkle"/></g>
         </g>
 
         <!-- Outer ring (silver) -->
