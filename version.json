@@ -1,12 +1,12 @@
 {
-  "version": "v260504.03 3:13p",
-  "release": 3,
-  "sha": "a7437f0",
-  "fullSha": "a7437f07ca52a6e7217185ef3b47512326de3137",
+  "version": "v260504.04 3:29p",
+  "release": 4,
+  "sha": "0f86bc4",
+  "fullSha": "0f86bc4e802c065832ba83e84c4bf586d652a9cc",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T12:13:30-03:00",
-  "commits": [{"sha":"a7437f0","message":"design(branding): add EsoYou logo SVG preview page","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T12:29:12-03:00",
+  "commits": [{"sha":"0f86bc4","message":"design(branding): astral chart layout with silver-on-purple palette","author":"Marcio Simao"}]
 }
