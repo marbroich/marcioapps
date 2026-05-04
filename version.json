@@ -1,12 +1,12 @@
 {
-  "version": "v260504.11 10:11p",
-  "release": 11,
-  "sha": "4160b51",
-  "fullSha": "4160b51848d47b9e5bcc68c5b449960815e64bba",
+  "version": "v260504.12 10:18p",
+  "release": 12,
+  "sha": "0e49a95",
+  "fullSha": "0e49a955477b8d190608c487222ea3c746a8f311",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:11:24-03:00",
-  "commits": [{"sha":"4160b51","message":"design(branding): add Alt F — hybrid figure (Gemini pose + clean geometry)","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:17:51-03:00",
+  "commits": [{"sha":"0e49a95","message":"design(branding): add 3 wordmark lockup mockups (figure + EsoYou)","author":"Marcio Simao"}]
 }
