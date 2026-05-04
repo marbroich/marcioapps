@@ -1,12 +1,12 @@
 {
-  "version": "v260504.13 10:27p",
-  "release": 13,
-  "sha": "4a59e5d",
-  "fullSha": "4a59e5dd6cb1840346362d6b83ee4ba782a3ee90",
+  "version": "v260504.14 10:35p",
+  "release": 14,
+  "sha": "935844f",
+  "fullSha": "935844ff125b199e685d648e8099af58ba622f79",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:27:36-03:00",
-  "commits": [{"sha":"4a59e5d","message":"design(branding): remove inner heart-star + show full You in lockup 2","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:35:48-03:00",
+  "commits": [{"sha":"935844f","message":"design(branding): enlarge figure in Caminho 2 + tighten gap to wordmark","author":"Marcio Simao"}]
 }
