@@ -1,12 +1,12 @@
 {
-  "version": "v260504.07 5:43p",
-  "release": 7,
-  "sha": "b59d59c",
-  "fullSha": "b59d59c6aa908287fccf1ea54a797680be18db5a",
+  "version": "v260504.08 7:30p",
+  "release": 8,
+  "sha": "7f89fbd",
+  "fullSha": "7f89fbddddd7fca3d6c77a1153acc32bf01c9731",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T14:43:11-03:00",
-  "commits": [{"sha":"b59d59c","message":"feat(branding): apply EsoYou identity — logo, name, slogan, night-sky theme","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T16:30:27-03:00",
+  "commits": [{"sha":"7f89fbd","message":"design(branding): add 4 logo alternatives comparison page","author":"Marcio Simao"}]
 }
