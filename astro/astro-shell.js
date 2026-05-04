@@ -93,11 +93,8 @@ function renderHeader(activeId) {
   host.innerHTML = `
     <div class="astro-header-bar">
       <div class="astro-header-inner">
-        <a href="/residents/profile.html" class="astro-back-link" title="Back to residents">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          Back
-        </a>
-        <h1 class="astro-header-title">Astro & Numerology</h1>
+        <img src="/branding/esoyou-logo.svg" alt="EsoYou" class="astro-header-logo">
+        <h1 class="astro-header-title">EsoYou</h1>
         <div class="astro-header-user">
           ${_appUser?.avatar_url
             ? `<img src="${_appUser.avatar_url}" alt="" class="astro-header-avatar">`

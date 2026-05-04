@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     astroProfile = ctx.astroProfile;
 
     document.getElementById('greeting').textContent =
-      `Hi ${appUser.first_name || appUser.display_name || 'there'}.`;
+      `Olá, ${appUser.first_name || appUser.display_name || 'você'}.`;
     document.getElementById('subtitle').textContent =
-      'Your astrological + numerological dashboard.';
+      'Seu dossiê esotérico — astrologia, numerologia, e mais por vir.';
 
     if (appUser.role === 'admin') {
       document.getElementById('adminArea').classList.remove('hidden');

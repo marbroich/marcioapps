@@ -1,33 +1,102 @@
-/* Astro section styles — light, data-forward, matches AAP design tokens */
+/* EsoYou — astro section styles. Night-sky theme: deep navy + silver + stars. */
+
+/* =============================================
+   Theme tokens (override the AAP defaults for this section)
+   ============================================= */
+.astro-main, body:has(.astro-main) {
+  --eso-bg-deep: #0e1a3c;
+  --eso-bg-mid: #1a2a5c;
+  --eso-bg-bright: #243878;
+  --eso-text: #f0f4ff;
+  --eso-text-muted: #a8b4d4;
+  --eso-text-dim: #7d89b0;
+  --eso-border: rgba(192, 200, 230, 0.18);
+  --eso-border-strong: rgba(192, 200, 230, 0.35);
+  --eso-card: rgba(255, 255, 255, 0.05);
+  --eso-card-strong: rgba(255, 255, 255, 0.09);
+  --eso-silver: #c8d0e8;
+  --eso-silver-bright: #e0e6f5;
+  --eso-silver-glow: rgba(200, 208, 232, 0.18);
+  --eso-success: #7adb8a;
+  --eso-success-light: rgba(122, 219, 138, 0.15);
+  --eso-error: #ff7a8a;
+  --eso-error-light: rgba(255, 122, 138, 0.15);
+  --eso-warning: #f5cd5a;
+  --eso-warning-light: rgba(245, 205, 90, 0.15);
+  --eso-info: #7cc4e8;
+  --eso-info-light: rgba(124, 196, 232, 0.15);
+}
 
 .hidden { display: none !important; }
 
 body {
-  background: var(--color-aap-cream);
-  color: var(--color-aap-text);
-  font-family: var(--font-sans);
+  background: var(--eso-bg-deep, #0e1a3c);
+  background-image:
+    radial-gradient(ellipse at 30% 10%, rgba(80, 110, 180, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(40, 70, 140, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 50%, #243878 100%);
+  background-attachment: fixed;
+  color: #f0f4ff;
+  font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Page-level starfield (constellation behind everything) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 12% 8%, #e8edf5 50%, transparent),
+    radial-gradient(1px 1px at 28% 22%, #d8dde8 50%, transparent),
+    radial-gradient(1.4px 1.4px at 47% 6%, #fff 60%, transparent),
+    radial-gradient(1px 1px at 65% 14%, #d8dde8 50%, transparent),
+    radial-gradient(1.2px 1.2px at 82% 26%, #e8edf5 55%, transparent),
+    radial-gradient(1px 1px at 92% 12%, #d8dde8 50%, transparent),
+    radial-gradient(1.5px 1.5px at 6% 38%, #fff 60%, transparent),
+    radial-gradient(1px 1px at 22% 52%, #d8dde8 50%, transparent),
+    radial-gradient(1.3px 1.3px at 88% 48%, #e8edf5 55%, transparent),
+    radial-gradient(1px 1px at 96% 62%, #d8dde8 50%, transparent),
+    radial-gradient(1px 1px at 8% 72%, #d8dde8 50%, transparent),
+    radial-gradient(1.4px 1.4px at 18% 88%, #fff 60%, transparent),
+    radial-gradient(1px 1px at 36% 94%, #d8dde8 50%, transparent),
+    radial-gradient(1.2px 1.2px at 58% 82%, #e8edf5 55%, transparent),
+    radial-gradient(1px 1px at 76% 92%, #d8dde8 50%, transparent),
+    radial-gradient(1.5px 1.5px at 90% 78%, #fff 60%, transparent),
+    radial-gradient(1px 1px at 38% 38%, #d8dde8 40%, transparent),
+    radial-gradient(1px 1px at 70% 60%, #d8dde8 40%, transparent);
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  z-index: 0;
 }
 
 #loadingOverlay {
   position: fixed; inset: 0;
-  background: var(--color-aap-cream);
+  background: linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 100%);
   display: flex; align-items: center; justify-content: center;
   z-index: 1000;
 }
 #loadingOverlay .spinner {
-  width: 32px; height: 32px;
-  border: 3px solid var(--color-aap-border);
-  border-top-color: var(--color-aap-amber);
+  width: 40px; height: 40px;
+  border: 3px solid rgba(192, 200, 230, 0.18);
+  border-top-color: #c8d0e8;
   border-radius: 50%;
   animation: astro-spin 0.8s linear infinite;
 }
 @keyframes astro-spin { to { transform: rotate(360deg); } }
 
-/* Header */
+/* =============================================
+   Header — translucent dark with silver accents
+   ============================================= */
 .astro-header-bar {
-  background: #fff;
-  border-bottom: 1px solid var(--color-aap-border);
+  background: rgba(14, 26, 60, 0.85);
+  border-bottom: 1px solid rgba(192, 200, 230, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: sticky; top: 0; z-index: 50;
 }
 .astro-header-inner {
@@ -38,7 +107,7 @@ body {
 .astro-back-link {
   display: inline-flex; align-items: center; gap: 0.25rem;
   text-decoration: none;
-  color: var(--color-aap-text-muted);
+  color: #a8b4d4;
   font-size: 0.85rem;
   font-weight: 500;
   padding: 0.25rem 0.5rem;
@@ -46,36 +115,46 @@ body {
   transition: background 0.15s, color 0.15s;
 }
 .astro-back-link:hover {
-  background: var(--color-aap-cream-muted);
-  color: var(--color-aap-text);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f0f4ff;
+}
+.astro-header-logo {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
 }
 .astro-header-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
   margin: 0;
   flex: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #fff 0%, #c8d0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .astro-header-user {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: 0.85rem;
-  color: var(--color-aap-text-muted);
+  color: #a8b4d4;
 }
 .astro-header-avatar {
   width: 28px; height: 28px;
   border-radius: 9999px;
   object-fit: cover;
-  background: var(--color-aap-cream-muted);
+  background: rgba(255, 255, 255, 0.1);
   display: inline-flex; align-items: center; justify-content: center;
   font-weight: 600;
   font-size: 0.8rem;
-  color: var(--color-aap-text);
+  color: #f0f4ff;
 }
 .astro-header-avatar--placeholder {
-  background: var(--color-aap-amber-light);
-  color: var(--color-aap-amber);
+  background: rgba(200, 208, 232, 0.2);
+  color: #c8d0e8;
 }
 
+/* Sub-nav (within astro section) */
 .astro-nav {
   max-width: 1100px; margin: 0 auto;
   padding: 0 1.5rem;
@@ -85,7 +164,7 @@ body {
 }
 .astro-nav-link {
   text-decoration: none;
-  color: var(--color-aap-text-muted);
+  color: #a8b4d4;
   font-size: 0.875rem;
   font-weight: 500;
   padding: 0.6rem 0.85rem;
@@ -93,61 +172,74 @@ body {
   white-space: nowrap;
   transition: color 0.15s, border-color 0.15s;
 }
-.astro-nav-link:hover {
-  color: var(--color-aap-text);
-}
+.astro-nav-link:hover { color: #f0f4ff; }
 .astro-nav-link--active {
-  color: var(--color-aap-amber);
-  border-bottom-color: var(--color-aap-amber);
+  color: #c8d0e8;
+  border-bottom-color: #c8d0e8;
 }
 
-/* Main */
+/* =============================================
+   Main + cards
+   ============================================= */
 .astro-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Cards */
 .astro-card {
-  background: #fff;
-  border: 1px solid var(--color-aap-border);
-  border-radius: var(--radius-aap-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(192, 200, 230, 0.18);
+  border-radius: 14px;
   padding: 1.5rem;
   margin-bottom: 1rem;
-  box-shadow: var(--shadow-aap-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 .astro-card-title {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-aap-text-muted);
+  letter-spacing: 0.18em;
+  color: #a8b4d4;
   margin: 0 0 0.75rem;
 }
 .astro-card h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
-  letter-spacing: -0.01em;
-}
-.astro-card p { line-height: 1.55; }
-
-/* Section heading inside main */
-.astro-section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  margin: 0 0 1rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.005em;
+  color: #f0f4ff;
+}
+.astro-card p { line-height: 1.55; color: #d8dde8; }
+
+/* Section heading */
+.astro-section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(180deg, #fff 0%, #c8d0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .astro-section-sub {
-  color: var(--color-aap-text-muted);
+  color: #a8b4d4;
   font-size: 0.95rem;
   margin: 0 0 1.5rem;
   max-width: 60ch;
+  line-height: 1.55;
 }
 
-/* Form */
+/* =============================================
+   Form
+   ============================================= */
 .astro-form {
   display: grid;
   gap: 1rem;
@@ -162,41 +254,55 @@ body {
 }
 .astro-field { display: flex; flex-direction: column; gap: 0.35rem; }
 .astro-field label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-aap-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8b4d4;
 }
 .astro-field input,
 .astro-field select,
 .astro-field textarea {
   width: 100%;
-  padding: 0.55rem 0.75rem;
-  border: 1px solid var(--color-aap-border);
-  border-radius: var(--radius-aap);
-  background: #fff;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(192, 200, 230, 0.18);
+  border-radius: 8px;
+  background: rgba(14, 26, 60, 0.4);
   font-family: inherit;
   font-size: 0.95rem;
-  color: var(--color-aap-text);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  color: #f0f4ff;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
 }
+.astro-field input::placeholder,
+.astro-field textarea::placeholder { color: rgba(168, 180, 212, 0.5); }
 .astro-field input:focus,
 .astro-field select:focus,
 .astro-field textarea:focus {
   outline: none;
-  border-color: var(--color-aap-amber);
-  box-shadow: 0 0 0 3px var(--color-aap-amber-light);
+  border-color: #c8d0e8;
+  box-shadow: 0 0 0 3px rgba(200, 208, 232, 0.18);
+  background: rgba(14, 26, 60, 0.6);
 }
 .astro-field textarea { min-height: 90px; resize: vertical; }
 .astro-field-help {
   font-size: 0.75rem;
-  color: var(--color-aap-text-muted);
+  color: #7d89b0;
+}
+.astro-field select option {
+  background: #1a2a5c;
+  color: #f0f4ff;
 }
 
 .astro-checkbox-row {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.875rem;
+  color: #d8dde8;
+}
+.astro-checkbox-row input[type="checkbox"] {
+  accent-color: #c8d0e8;
 }
 
+/* Chips */
 .astro-chips {
   display: flex; flex-wrap: wrap; gap: 0.4rem;
 }
@@ -206,29 +312,31 @@ body {
 }
 .astro-chip input { display: none; }
 .astro-chip span {
-  padding: 0.3rem 0.65rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 9999px;
-  border: 1px solid var(--color-aap-border);
-  background: #fff;
+  border: 1px solid rgba(192, 200, 230, 0.25);
+  background: rgba(255, 255, 255, 0.04);
   font-size: 0.8rem;
-  color: var(--color-aap-text);
+  color: #d8dde8;
   transition: all 0.15s;
 }
-.astro-chip:hover span { border-color: var(--color-aap-amber); }
+.astro-chip:hover span { border-color: #c8d0e8; color: #fff; }
 .astro-chip input:checked + span {
-  background: var(--color-aap-amber);
-  border-color: var(--color-aap-amber);
-  color: #fff;
+  background: #c8d0e8;
+  border-color: #c8d0e8;
+  color: #1a2a5c;
 }
 
-/* Buttons */
+/* =============================================
+   Buttons
+   ============================================= */
 .astro-btn {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.55rem 1rem;
-  border: 1px solid var(--color-aap-border);
-  border-radius: var(--radius-aap);
-  background: #fff;
-  color: var(--color-aap-text);
+  border: 1px solid rgba(192, 200, 230, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f0f4ff;
   font-family: inherit;
   font-weight: 500;
   font-size: 0.9rem;
@@ -236,14 +344,23 @@ body {
   text-decoration: none;
   transition: all 0.15s;
 }
-.astro-btn:hover { background: var(--color-aap-cream-muted); }
-.astro-btn--primary {
-  background: var(--color-aap-amber);
-  border-color: var(--color-aap-amber);
-  color: #fff;
+.astro-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #c8d0e8;
 }
-.astro-btn--primary:hover { background: var(--color-aap-amber-hover); border-color: var(--color-aap-amber-hover); }
-.astro-btn--ghost { border-color: transparent; }
+.astro-btn--primary {
+  background: #c8d0e8;
+  border-color: #c8d0e8;
+  color: #1a2a5c;
+  font-weight: 600;
+}
+.astro-btn--primary:hover {
+  background: #e0e6f5;
+  border-color: #e0e6f5;
+  color: #0e1a3c;
+}
+.astro-btn--ghost { border-color: transparent; background: transparent; }
+.astro-btn--ghost:hover { background: rgba(255, 255, 255, 0.06); }
 .astro-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .astro-actions {
@@ -251,89 +368,104 @@ body {
   padding-top: 0.5rem;
 }
 
-/* Tables */
-.astro-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+/* =============================================
+   Tables
+   ============================================= */
+.astro-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; color: #d8dde8; }
 .astro-table th, .astro-table td {
-  padding: 0.55rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid var(--color-aap-border);
+  border-bottom: 1px solid rgba(192, 200, 230, 0.12);
 }
 .astro-table th {
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-aap-text-muted);
+  letter-spacing: 0.1em;
+  color: #a8b4d4;
 }
-.astro-table tbody tr:hover { background: var(--color-aap-cream-muted); }
+.astro-table tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
 .astro-table .num { font-variant-numeric: tabular-nums; text-align: right; }
 
-/* Stat row */
+/* =============================================
+   Stat grid
+   ============================================= */
 .astro-stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 0.75rem;
 }
 .astro-stat {
-  background: var(--color-aap-cream-muted);
-  border-radius: var(--radius-aap);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(192, 200, 230, 0.12);
+  border-radius: 10px;
   padding: 0.85rem 1rem;
 }
 .astro-stat-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-aap-text-muted);
-  margin: 0 0 0.25rem;
+  letter-spacing: 0.16em;
+  color: #a8b4d4;
+  margin: 0 0 0.35rem;
 }
 .astro-stat-value {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--color-aap-text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #f0f4ff;
 }
 .astro-stat-sub {
   font-size: 0.75rem;
-  color: var(--color-aap-text-muted);
-  margin-top: 0.15rem;
+  color: #7d89b0;
+  margin-top: 0.25rem;
 }
 
-/* Toast */
+/* =============================================
+   Toast
+   ============================================= */
 #toastContainer {
   position: fixed; top: 1rem; right: 1rem;
   z-index: 200;
   display: flex; flex-direction: column; gap: 0.5rem;
 }
 .astro-toast {
-  background: var(--color-aap-text);
-  color: #fff;
-  padding: 0.6rem 0.9rem;
-  border-radius: var(--radius-aap);
+  background: #1a2a5c;
+  border: 1px solid rgba(192, 200, 230, 0.3);
+  color: #f0f4ff;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
   font-size: 0.875rem;
-  box-shadow: var(--shadow-aap-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   opacity: 0; transform: translateY(-6px);
   transition: opacity 0.18s, transform 0.18s;
   max-width: 360px;
 }
 .astro-toast--in { opacity: 1; transform: translateY(0); }
-.astro-toast--success { background: var(--color-aap-success); }
-.astro-toast--error { background: var(--color-aap-error); }
-.astro-toast--warning { background: var(--color-aap-warning); color: var(--color-aap-text); }
+.astro-toast--success { border-color: #7adb8a; background: rgba(122, 219, 138, 0.15); }
+.astro-toast--error { border-color: #ff7a8a; background: rgba(255, 122, 138, 0.15); }
+.astro-toast--warning { border-color: #f5cd5a; background: rgba(245, 205, 90, 0.15); }
 
-/* Notice */
+/* =============================================
+   Notice
+   ============================================= */
 .astro-notice {
-  background: var(--color-aap-info-light);
-  border-left: 3px solid var(--color-aap-info);
+  background: rgba(124, 196, 232, 0.1);
+  border-left: 3px solid #7cc4e8;
   padding: 0.75rem 1rem;
   border-radius: 4px;
   font-size: 0.875rem;
-  color: var(--color-aap-text);
+  color: #d8dde8;
   margin-bottom: 1rem;
 }
 .astro-notice--warning {
-  background: var(--color-aap-warning-light);
-  border-left-color: var(--color-aap-warning);
+  background: rgba(245, 205, 90, 0.1);
+  border-left-color: #f5cd5a;
+}
+.astro-notice a {
+  color: #c8d0e8;
+  text-decoration: underline;
 }
 
 /* Fatal */
@@ -341,6 +473,7 @@ body {
   text-align: center;
   display: flex; flex-direction: column; gap: 1rem;
   align-items: center;
+  color: #f0f4ff;
 }
 
 /* Chart wheel canvas */
@@ -349,7 +482,7 @@ body {
   max-width: 100%;
 }
 
-/* Two-col layout used by chart pages */
+/* Two-col layout */
 .astro-twocol {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -359,38 +492,42 @@ body {
   .astro-twocol { grid-template-columns: 1fr; }
 }
 
-/* Number callout used by numerology */
+/* =============================================
+   Number callout (numerology)
+   ============================================= */
 .astro-num-callout {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1.25rem;
   align-items: center;
-  padding: 1rem 0;
-  border-top: 1px solid var(--color-aap-border);
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(192, 200, 230, 0.15);
 }
 .astro-num-callout:first-of-type { border-top: none; }
 .astro-num-circle {
-  width: 56px; height: 56px;
+  width: 64px; height: 64px;
   border-radius: 9999px;
-  background: var(--color-aap-amber-light);
-  color: var(--color-aap-amber);
+  background: rgba(200, 208, 232, 0.15);
+  border: 1px solid rgba(200, 208, 232, 0.4);
+  color: #f0f4ff;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 .astro-num-name {
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-aap-text-muted);
-  margin: 0 0 0.15rem;
+  letter-spacing: 0.16em;
+  color: #a8b4d4;
+  margin: 0 0 0.2rem;
 }
 .astro-num-text {
   font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--color-aap-text);
+  line-height: 1.55;
+  color: #d8dde8;
   margin: 0;
 }
 
@@ -398,4 +535,17 @@ body {
 .astro-glyph {
   font-family: 'DejaVu Sans', 'Segoe UI Symbol', 'Apple Symbols', serif;
   font-size: 1.05em;
+}
+
+/* Anchor styles inside astro pages */
+.astro-main a {
+  color: #c8d0e8;
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 208, 232, 0.4);
+  text-underline-offset: 2px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.astro-main a:hover {
+  color: #fff;
+  text-decoration-color: #fff;
 }

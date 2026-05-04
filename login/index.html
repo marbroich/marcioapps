@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="../branding/esoyou-favicon.svg">
+  <link rel="apple-touch-icon" href="../branding/esoyou-favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
-  <title>Sign In - AlpacAPPs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap">
+  <title>Entrar · EsoYou</title>
   <style>
+    /* EsoYou — night sky theme */
     :root {
-      --bg: #faf8f5;
-      --bg-card: #ffffff;
-      --text: #1a1a2e;
-      --text-muted: #6b7280;
-      --border: #e5e2dc;
-      --accent: #3d8b7a;
-      --accent-light: #e5f4f1;
-      --success: #2d8659;
-      --success-light: #e5f4ed;
-      --error: #e07a5f;
-      --error-light: #fdf0ec;
-      --radius: 12px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-lg: 0 8px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      --bg: #1a2a5c;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-card-solid: #1e2c5c;
+      --text: #f0f4ff;
+      --text-muted: #a8b4d4;
+      --border: rgba(192, 200, 230, 0.18);
+      --border-strong: rgba(192, 200, 230, 0.35);
+      --accent: #c8d0e8;
+      --accent-hover: #e0e6f5;
+      --accent-light: rgba(200, 208, 232, 0.15);
+      --success: #7adb8a;
+      --success-light: rgba(122, 219, 138, 0.15);
+      --error: #ff7a8a;
+      --error-light: rgba(255, 122, 138, 0.15);
+      --radius: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.3);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.25);
     }
 
     * {
@@ -35,7 +39,6 @@
 
     body {
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -43,7 +46,45 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
+      position: relative;
+      overflow-x: hidden;
+      background: #1a2a5c;
+      background-image:
+        radial-gradient(ellipse at 30% 10%, rgba(80, 110, 180, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(40, 70, 140, 0.4) 0%, transparent 60%),
+        linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 50%, #243878 100%);
     }
+
+    /* Starfield — silver dots scattered behind everything */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 12% 8%, #e8edf5 50%, transparent),
+        radial-gradient(1px 1px at 28% 22%, #d8dde8 50%, transparent),
+        radial-gradient(1.4px 1.4px at 47% 6%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 65% 14%, #d8dde8 50%, transparent),
+        radial-gradient(1.2px 1.2px at 82% 26%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 92% 12%, #d8dde8 50%, transparent),
+        radial-gradient(1.5px 1.5px at 6% 38%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 22% 52%, #d8dde8 50%, transparent),
+        radial-gradient(1.3px 1.3px at 88% 48%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 96% 62%, #d8dde8 50%, transparent),
+        radial-gradient(1px 1px at 8% 72%, #d8dde8 50%, transparent),
+        radial-gradient(1.4px 1.4px at 18% 88%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 36% 94%, #d8dde8 50%, transparent),
+        radial-gradient(1.2px 1.2px at 58% 82%, #e8edf5 55%, transparent),
+        radial-gradient(1px 1px at 76% 92%, #d8dde8 50%, transparent),
+        radial-gradient(1.5px 1.5px at 90% 78%, #fff 60%, transparent),
+        radial-gradient(1px 1px at 38% 38%, #d8dde8 40%, transparent),
+        radial-gradient(1px 1px at 70% 60%, #d8dde8 40%, transparent);
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      z-index: 0;
+    }
+    .login-container { position: relative; z-index: 1; }
 
     /* Hide everything until JS decides what to show — prevents login form flash */
     body:not(.ready) .login-container {
@@ -61,29 +102,41 @@
       box-shadow: var(--shadow-lg);
       padding: 2rem 2.25rem;
       text-align: center;
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .logo {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
     }
     .logo img {
-      width: 72px;
-      height: auto;
+      width: 96px;
+      height: 96px;
+      filter: drop-shadow(0 0 20px rgba(180, 200, 240, 0.25));
     }
 
     h1 {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 400;
       margin-bottom: 0.125rem;
-      letter-spacing: -0.01em;
+      letter-spacing: 0.01em;
+      background: linear-gradient(180deg, #fff 0%, #c8d0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .subtitle {
       color: var(--text-muted);
-      margin-bottom: 0.125rem;
-      font-size: 0.875rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     /* Auth tabs */
@@ -152,7 +205,7 @@
       width: 100%;
       padding: 0.7rem 1.5rem;
       background: var(--accent);
-      color: white;
+      color: #1a2a5c;
       border: none;
       border-radius: 8px;
       font-family: inherit;
@@ -164,9 +217,9 @@
     }
 
     .btn-primary:hover {
-      background: #2f6d5f;
+      background: var(--accent-hover);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(61, 139, 122, 0.3);
+      box-shadow: 0 4px 16px rgba(200, 208, 232, 0.25);
     }
 
     .btn-primary:disabled {
@@ -326,9 +379,9 @@
 <body>
   <div class="login-container">
     <div class="login-card">
-      <div class="logo"><img src="../assets/branding/logo-black-transparent.png" alt="AlpacAPPs logo"></div>
-      <h1>AlpacAPPs</h1>
-      <p class="subtitle">We put the AI in Property</p>
+      <div class="logo"><img src="../branding/esoyou-logo.svg" alt="EsoYou"></div>
+      <h1>EsoYou</h1>
+      <p class="subtitle">O seu &lsquo;eu&rsquo; esotérico</p>
       <span title="Site version" style="font-size:0.65rem;color:#bbb;font-weight:400;cursor:pointer;display:block;margin-bottom:0.5rem"></span>
 
       <!-- Sign In / Sign Up forms -->
