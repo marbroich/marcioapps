@@ -1,12 +1,12 @@
 {
-  "version": "v260504.10 10:03p",
-  "release": 10,
-  "sha": "99132bb",
-  "fullSha": "99132bb847f55132a030fa9d63d179ae2f5ca1d1",
+  "version": "v260504.11 10:11p",
+  "release": 11,
+  "sha": "4160b51",
+  "fullSha": "4160b51848d47b9e5bcc68c5b449960815e64bba",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:03:08-03:00",
-  "commits": [{"sha":"99132bb","message":"design(branding): refine Alt E — slimmer human-star body, no head point, Gemini palette","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T19:11:24-03:00",
+  "commits": [{"sha":"4160b51","message":"design(branding): add Alt F — hybrid figure (Gemini pose + clean geometry)","author":"Marcio Simao"}]
 }
