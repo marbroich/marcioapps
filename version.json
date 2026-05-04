@@ -1,12 +1,12 @@
 {
-  "version": "v260504.17 10:55p",
-  "release": 17,
-  "sha": "5d828e0",
-  "fullSha": "5d828e0c40f671a432f7603d414e0b5c63e4c87b",
+  "version": "v260504.18 11:01p",
+  "release": 18,
+  "sha": "b54b6a0",
+  "fullSha": "b54b6a0858f51465e876c38e20377d91a8c1d964",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T19:55:07-03:00",
-  "commits": [{"sha":"5d828e0","message":"design(branding): restore previous arms shape, drop words below arm level","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T20:01:45-03:00",
+  "commits": [{"sha":"b54b6a0","message":"design(branding): align arm tips with letter visual centers (asymmetric)","author":"Marcio Simao"}]
 }
