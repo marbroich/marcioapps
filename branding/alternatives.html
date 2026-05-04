@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EsoYou — alternativas de logo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #e8edf5;
+      background: #1a2a5c;
+      background-image:
+        radial-gradient(ellipse at 30% 10%, rgba(80, 110, 180, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(40, 70, 140, 0.4) 0%, transparent 60%),
+        linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 50%, #243878 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+      padding: 3rem 1.5rem 6rem;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 12% 8%, #fff, transparent),
+        radial-gradient(1px 1px at 28% 22%, #d8dde8, transparent),
+        radial-gradient(1.4px 1.4px at 47% 6%, #fff, transparent),
+        radial-gradient(1px 1px at 65% 14%, #d8dde8, transparent),
+        radial-gradient(1.2px 1.2px at 82% 26%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 92% 12%, #d8dde8, transparent),
+        radial-gradient(1.5px 1.5px at 6% 38%, #fff, transparent),
+        radial-gradient(1px 1px at 22% 52%, #d8dde8, transparent),
+        radial-gradient(1.3px 1.3px at 88% 48%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 96% 62%, #d8dde8, transparent),
+        radial-gradient(1px 1px at 8% 72%, #d8dde8, transparent),
+        radial-gradient(1.4px 1.4px at 18% 88%, #fff, transparent),
+        radial-gradient(1px 1px at 36% 94%, #d8dde8, transparent),
+        radial-gradient(1.2px 1.2px at 58% 82%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 76% 92%, #d8dde8, transparent),
+        radial-gradient(1.5px 1.5px at 90% 78%, #fff, transparent);
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      z-index: 0;
+    }
+    main { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      text-align: center;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+      background: linear-gradient(180deg, #fff, #c8d0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .lede {
+      text-align: center;
+      color: #a8b4d4;
+      margin-bottom: 3.5rem;
+      font-size: 0.95rem;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .alt {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(192, 200, 230, 0.12);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(2px);
+    }
+    .alt-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
+    .alt-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: #c8d0e8;
+      line-height: 1;
+    }
+    .alt-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.005em;
+      color: #f0f4ff;
+    }
+    .alt-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a8b4d4;
+    }
+    .alt-desc { color: #b8c2d8; margin-bottom: 1.5rem; font-size: 0.92rem; max-width: 65ch; }
+    .sizes-row {
+      display: flex; align-items: flex-end; gap: 2rem;
+      flex-wrap: wrap; justify-content: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+    }
+    .size-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .size-item small { font-size: 0.7rem; color: #8a99c0; letter-spacing: 0.05em; }
+    .alt-card-preview {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(192, 200, 230, 0.1);
+      text-align: center;
+    }
+    .alt-card-preview-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+      background: linear-gradient(180deg, #fff, #c8d0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .alt-card-preview-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #98a8c8;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>4 direções para o logo da EsoYou</h1>
+    <p class="lede">
+      Cada bloco mostra uma personalidade visual diferente, em 4 tamanhos
+      (32&thinsp;px favicon → 200&thinsp;px destaque) e numa simulação da tela de
+      login. Compare como cada uma "sustenta" no pequeno e no grande.
+    </p>
+
+    <!-- ============================================================
+         SVG DEFINITIONS
+         ============================================================ -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <!-- =========== ALT A — CONSTELLATION PERSON =========== -->
+        <g id="alt-a">
+          <!-- Outer thin circle -->
+          <circle cx="200" cy="200" r="185" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>
+
+          <!-- Constellation lines (drawn first so stars sit on top) -->
+          <g stroke="currentColor" stroke-width="1" opacity="0.5" fill="none" stroke-linecap="round">
+            <!-- Head to neck -->
+            <line x1="200" y1="80" x2="200" y2="115"/>
+            <!-- Neck to shoulders -->
+            <line x1="200" y1="115" x2="140" y2="135"/>
+            <line x1="200" y1="115" x2="260" y2="135"/>
+            <!-- Shoulders to elbows -->
+            <line x1="140" y1="135" x2="100" y2="180"/>
+            <line x1="260" y1="135" x2="300" y2="180"/>
+            <!-- Elbows to hands -->
+            <line x1="100" y1="180" x2="75" y2="225"/>
+            <line x1="300" y1="180" x2="325" y2="225"/>
+            <!-- Shoulders to torso center -->
+            <line x1="140" y1="135" x2="200" y2="220"/>
+            <line x1="260" y1="135" x2="200" y2="220"/>
+            <!-- Torso to hips -->
+            <line x1="200" y1="220" x2="170" y2="265"/>
+            <line x1="200" y1="220" x2="230" y2="265"/>
+            <!-- Hips to knees -->
+            <line x1="170" y1="265" x2="155" y2="320"/>
+            <line x1="230" y1="265" x2="245" y2="320"/>
+            <!-- Knees to feet -->
+            <line x1="155" y1="320" x2="145" y2="360"/>
+            <line x1="245" y1="320" x2="255" y2="360"/>
+          </g>
+
+          <!-- Stars at body points: bigger, brighter -->
+          <g fill="currentColor">
+            <circle cx="200" cy="80"  r="5" opacity="1"/>            <!-- head -->
+            <circle cx="200" cy="115" r="3" opacity="0.85"/>         <!-- neck -->
+            <circle cx="140" cy="135" r="3.5" opacity="0.95"/>       <!-- L shoulder -->
+            <circle cx="260" cy="135" r="3.5" opacity="0.95"/>       <!-- R shoulder -->
+            <circle cx="100" cy="180" r="2.5" opacity="0.85"/>       <!-- L elbow -->
+            <circle cx="300" cy="180" r="2.5" opacity="0.85"/>       <!-- R elbow -->
+            <circle cx="75"  cy="225" r="3" opacity="0.95"/>         <!-- L hand -->
+            <circle cx="325" cy="225" r="3" opacity="0.95"/>         <!-- R hand -->
+            <circle cx="200" cy="220" r="4" opacity="1"/>            <!-- torso center -->
+            <circle cx="170" cy="265" r="3" opacity="0.9"/>          <!-- L hip -->
+            <circle cx="230" cy="265" r="3" opacity="0.9"/>          <!-- R hip -->
+            <circle cx="155" cy="320" r="2.5" opacity="0.85"/>       <!-- L knee -->
+            <circle cx="245" cy="320" r="2.5" opacity="0.85"/>       <!-- R knee -->
+            <circle cx="145" cy="360" r="3" opacity="0.95"/>         <!-- L foot -->
+            <circle cx="255" cy="360" r="3" opacity="0.95"/>         <!-- R foot -->
+          </g>
+
+          <!-- A few decorative background stars -->
+          <g fill="currentColor" opacity="0.5">
+            <circle cx="50" cy="60" r="1"/>
+            <circle cx="350" cy="80" r="1.2"/>
+            <circle cx="40" cy="340" r="1"/>
+            <circle cx="360" cy="320" r="1.2"/>
+            <circle cx="200" cy="380" r="0.8"/>
+          </g>
+        </g>
+
+        <!-- =========== ALT B — BOLD VITRUVIAN =========== -->
+        <g id="alt-b">
+          <!-- Outer ring -->
+          <circle cx="200" cy="200" r="185" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <!-- Inscribed square (Vitruvian) -->
+          <rect x="50" y="50" width="300" height="300" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+
+          <!-- The single bold figure -->
+          <!-- Head -->
+          <circle cx="200" cy="100" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
+          <!-- Body line -->
+          <line x1="200" y1="125" x2="200" y2="270" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Arms (horizontal — square pose) -->
+          <line x1="80" y1="190" x2="320" y2="190" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+          <!-- Arms (raised — circle pose) -->
+          <line x1="200" y1="155" x2="100" y2="105" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="200" y1="155" x2="300" y2="105" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <!-- Legs (together — square pose) -->
+          <line x1="200" y1="270" x2="178" y2="345" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+          <line x1="200" y1="270" x2="222" y2="345" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+          <!-- Legs (spread — circle pose) -->
+          <line x1="200" y1="270" x2="105" y2="345" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="200" y1="270" x2="295" y2="345" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+          <!-- 12 small dots at sign positions on the outer ring (subtle) -->
+          <g fill="currentColor" opacity="0.7">
+            <circle cx="200" cy="15" r="2.5"/>
+            <circle cx="293" cy="40" r="2.5"/>
+            <circle cx="360" cy="107" r="2.5"/>
+            <circle cx="385" cy="200" r="2.5"/>
+            <circle cx="360" cy="293" r="2.5"/>
+            <circle cx="293" cy="360" r="2.5"/>
+            <circle cx="200" cy="385" r="2.5"/>
+            <circle cx="107" cy="360" r="2.5"/>
+            <circle cx="40" cy="293" r="2.5"/>
+            <circle cx="15" cy="200" r="2.5"/>
+            <circle cx="40" cy="107" r="2.5"/>
+            <circle cx="107" cy="40" r="2.5"/>
+          </g>
+        </g>
+
+        <!-- =========== ALT C — SACRED MANDALA (12-POINTED STAR) =========== -->
+        <g id="alt-c">
+          <!-- Outer ring -->
+          <circle cx="200" cy="200" r="185" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <!-- 12-pointed star (dodecagram = two overlapping hexagrams) -->
+          <!-- First hexagram (6-pointed star, points up) -->
+          <polygon points="200,40 250,123 343,123 273,180 296,270 200,220 104,270 127,180 57,123 150,123"
+                   fill="none" stroke="currentColor" stroke-width="2" opacity="0.85"
+                   transform="translate(0, 30)"/>
+          <!-- Second hexagram, rotated 30° offset -->
+          <g transform="rotate(30 200 200)" opacity="0.7">
+            <polygon points="200,40 250,123 343,123 273,180 296,270 200,220 104,270 127,180 57,123 150,123"
+                     fill="none" stroke="currentColor" stroke-width="1.6"
+                     transform="translate(0, 30)"/>
+          </g>
+          <!-- Inner circle -->
+          <circle cx="200" cy="200" r="55" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.85"/>
+          <!-- Stylized eye / center symbol: vesica piscis -->
+          <ellipse cx="200" cy="200" rx="45" ry="25" fill="none" stroke="currentColor" stroke-width="1.8" opacity="1"/>
+          <!-- Pupil -->
+          <circle cx="200" cy="200" r="9" fill="currentColor" opacity="0.95"/>
+          <circle cx="200" cy="200" r="3" fill="#1a2a5c" opacity="1"/>
+          <!-- Lashes (rays) -->
+          <g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5">
+            <line x1="200" y1="172" x2="200" y2="160"/>
+            <line x1="200" y1="228" x2="200" y2="240"/>
+          </g>
+        </g>
+
+        <!-- =========== ALT D — WORDMARK + UNIQUE MARK =========== -->
+        <g id="alt-d">
+          <!-- A bold geometric mark to pair with the wordmark -->
+          <!-- Crescent moon embracing a star -->
+          <circle cx="200" cy="200" r="160" fill="currentColor" opacity="0.95"/>
+          <!-- Cut out a smaller circle, offset, to make crescent -->
+          <circle cx="245" cy="180" r="135" fill="#1a2a5c"/>
+          <!-- Small star nestled inside the crescent -->
+          <g transform="translate(140, 215)" fill="currentColor">
+            <polygon points="0,-30 8,-9 30,-9 13,4 19,25 0,12 -19,25 -13,4 -30,-9 -8,-9"/>
+          </g>
+        </g>
+      </defs>
+    </svg>
+
+    <!-- ============================================================
+         ALT A — CONSTELLATION PERSON
+         ============================================================ -->
+    <section class="alt">
+      <div class="alt-head">
+        <span class="alt-letter">A</span>
+        <span class="alt-tag">opção 1</span>
+      </div>
+      <h2 class="alt-name">Constelação-Pessoa</h2>
+      <p class="alt-desc">
+        Uma figura humana <strong>formada por estrelas conectadas</strong>, como uma constelação
+        no céu. Cabeça, ombros, mãos, quadris, pés — pontos brilhantes ligados por
+        linhas finas de prata. Conexão direta com a noite estrelada e com o conceito
+        de "avatar único" (cada pessoa é uma constelação só dela). Mantém legibilidade
+        em qualquer tamanho.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32" style="color:#d8dde8"><use href="#alt-a"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64" style="color:#d8dde8"><use href="#alt-a"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128" style="color:#d8dde8"><use href="#alt-a"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200" style="color:#d8dde8"><use href="#alt-a"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="96" height="96" style="color:#d8dde8"><use href="#alt-a"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ALT B — BOLD VITRUVIAN
+         ============================================================ -->
+    <section class="alt">
+      <div class="alt-head">
+        <span class="alt-letter">B</span>
+        <span class="alt-tag">opção 2</span>
+      </div>
+      <h2 class="alt-name">Vitruviano Solene</h2>
+      <p class="alt-desc">
+        <strong>Uma figura grande, central, marcante</strong> — Vitruviano "de
+        verdade" (4 braços, 4 pernas, círculo + quadrado), com traço grosso. 12 pontos
+        discretos no anel externo representam as modalidades. Forma renascentista
+        clássica, presença forte, ainda 100% conectada ao conceito original.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32" style="color:#d8dde8"><use href="#alt-b"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64" style="color:#d8dde8"><use href="#alt-b"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128" style="color:#d8dde8"><use href="#alt-b"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200" style="color:#d8dde8"><use href="#alt-b"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="96" height="96" style="color:#d8dde8"><use href="#alt-b"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ALT C — SACRED MANDALA
+         ============================================================ -->
+    <section class="alt">
+      <div class="alt-head">
+        <span class="alt-letter">C</span>
+        <span class="alt-tag">opção 3</span>
+      </div>
+      <h2 class="alt-name">Mandala Sagrada (com olho)</h2>
+      <p class="alt-desc">
+        Pura geometria — <strong>estrela de 12 pontas</strong> (dodecagrama) sobreposta
+        em duas camadas, com um <strong>olho central</strong> (vesica piscis + pupila)
+        — referência clássica ao "olho que tudo vê" das tradições esotéricas. Sem
+        figuras humanas, mais abstrato e místico. Excelente em qualquer tamanho.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32" style="color:#d8dde8"><use href="#alt-c"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64" style="color:#d8dde8"><use href="#alt-c"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128" style="color:#d8dde8"><use href="#alt-c"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200" style="color:#d8dde8"><use href="#alt-c"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="96" height="96" style="color:#d8dde8"><use href="#alt-c"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ALT D — WORDMARK + CRESCENT-STAR
+         ============================================================ -->
+    <section class="alt">
+      <div class="alt-head">
+        <span class="alt-letter">D</span>
+        <span class="alt-tag">opção 4</span>
+      </div>
+      <h2 class="alt-name">Lua Crescente com Estrela</h2>
+      <p class="alt-desc">
+        Símbolo <strong>cheio de presença</strong> — uma forma sólida prata em vez de
+        traços finos. Lua crescente abraçando uma estrela. Visual mais "marca de
+        produto" que pode estampar t-shirts, papelaria, etc. Funciona perfeito como
+        favicon. Pode vir acompanhado do wordmark "EsoYou" em fonte serifada.
+      </p>
+      <div class="sizes-row">
+        <div class="size-item"><svg viewBox="0 0 400 400" width="32" height="32" style="color:#d8dde8"><use href="#alt-d"/></svg><small>32 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="64" height="64" style="color:#d8dde8"><use href="#alt-d"/></svg><small>64 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="128" height="128" style="color:#d8dde8"><use href="#alt-d"/></svg><small>128 px</small></div>
+        <div class="size-item"><svg viewBox="0 0 400 400" width="200" height="200" style="color:#d8dde8"><use href="#alt-d"/></svg><small>200 px</small></div>
+      </div>
+      <div class="alt-card-preview">
+        <svg viewBox="0 0 400 400" width="96" height="96" style="color:#d8dde8"><use href="#alt-d"/></svg>
+        <div class="alt-card-preview-name">EsoYou</div>
+        <div class="alt-card-preview-tag">O seu &lsquo;eu&rsquo; esotérico</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REFERENCE — current logo, for comparison
+         ============================================================ -->
+    <section class="alt" style="opacity:0.7">
+      <div class="alt-head">
+        <span class="alt-letter">~</span>
+        <span class="alt-tag">atual (referência)</span>
+      </div>
+      <h2 class="alt-name">12 Vitruvianos coloridos (atual)</h2>
+      <p class="alt-desc">Para comparação — o logo que está no site agora. Reparou como ele "some" no tamanho de 96 px lá no card?</p>
+      <div class="sizes-row">
+        <div class="size-item"><img src="esoyou-logo.svg" width="32" height="32" alt=""><small>32 px</small></div>
+        <div class="size-item"><img src="esoyou-logo.svg" width="64" height="64" alt=""><small>64 px</small></div>
+        <div class="size-item"><img src="esoyou-logo.svg" width="128" height="128" alt=""><small>128 px</small></div>
+        <div class="size-item"><img src="esoyou-logo.svg" width="200" height="200" alt=""><small>200 px</small></div>
+      </div>
+    </section>
+
+    <p class="lede" style="margin-top:3rem">
+      Olha as quatro opções com calma. Me conta qual te chama mais atenção, ou se
+      quer combinar elementos de duas (ex: "gostei do olho da C com a tipografia da D").
+      Posso ajustar qualquer detalhe — espessura, brilho, tamanho, cor.
+    </p>
+  </main>
+</body>
+</html>
