@@ -1,12 +1,12 @@
 {
-  "version": "v260504.02 2:24p",
-  "release": 2,
-  "sha": "5b00126",
-  "fullSha": "5b001260cb43f68a4b7be2cbf9ec81983f2482da",
+  "version": "v260504.03 3:13p",
+  "release": 3,
+  "sha": "a7437f0",
+  "fullSha": "a7437f07ca52a6e7217185ef3b47512326de3137",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T11:23:58-03:00",
-  "commits": [{"sha":"5b00126","message":"fix: replace missing /vendor/supabase-js path with jsdelivr CDN","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T12:13:30-03:00",
+  "commits": [{"sha":"a7437f0","message":"design(branding): add EsoYou logo SVG preview page","author":"Marcio Simao"}]
 }
