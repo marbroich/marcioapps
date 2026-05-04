@@ -1,12 +1,12 @@
 {
-  "version": "v260502.01 3:30p",
+  "version": "v260504.01 1:03a",
   "release": 1,
-  "sha": "884be63",
-  "fullSha": "884be6364a4ec73221ace196bbea46f2d57efe16",
+  "sha": "8be1a65",
+  "fullSha": "8be1a6586dbe5a39575d3b401c086480e4aa13e7",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-02T12:29:25-03:00",
-  "commits": [{"sha":"884be63","message":"feat: Great Guide — bespoke private tour app for hotel guests","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-03T22:03:42-03:00",
+  "commits": [{"sha":"d2c0b1b","message":"feat(astro): add astrology + numerology section under /astro/","author":"Marcio Simao"},{"sha":"ad5e2ab","message":"chore: configure Supabase project (marcioproject) credentials","author":"Marcio Simao"},{"sha":"7cfc6ab","message":"fix(supabase): rewrite astro migration to be self-contained","author":"Marcio Simao"},{"sha":"8be1a65","message":"Merge remote-tracking branch 'origin/main' into claude/wizardly-robinson-81bc96","author":"Marcio Simao"}]
 }
