@@ -4,8 +4,10 @@
 # Secrets/variables required (configured 2026-05-04):
 #   secrets.CLOUDFLARE_API_TOKEN     — Cloudflare API token with Pages:Edit
 #   secrets.CLOUDFLARE_ACCOUNT_ID    — 32-char hex account id
-#   secrets.SUPABASE_DB_URL          — postgres URL for the version-bump script
 #   vars.CLOUDFLARE_PAGES_PROJECT    — Pages project name (marcioapps)
+#
+# Note: SUPABASE_DB_URL is intentionally NOT set — the bump-version script
+# falls back to offline mode (no DB recording) when the secret is absent.
 
 name: Build & Deploy to Cloudflare Pages
 
