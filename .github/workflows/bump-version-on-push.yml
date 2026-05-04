@@ -1,7 +1,7 @@
 # Bump version on every push to main, build Tailwind, deploy to Cloudflare Pages.
 # Runs only when the push is NOT our own bump commit ([skip ci]), so we avoid a loop.
 #
-# Secrets/variables required (configured 2026-05-04):
+# Secrets/variables required (configured 2026-05-04, validated):
 #   secrets.CLOUDFLARE_API_TOKEN     — Cloudflare API token with Pages:Edit
 #   secrets.CLOUDFLARE_ACCOUNT_ID    — 32-char hex account id
 #   secrets.SUPABASE_DB_URL          — postgres URL for the version-bump script
