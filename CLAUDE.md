@@ -1,9 +1,8 @@
 ## Project Identity Check
 
-This is **alpacapps-infra**. If the user mentions **finleg**, **portsie**, or **sponic** and the request doesn't match this project, **STOP** and warn:
-> "You mentioned **{keyword}** but this session is in **alpacapps-infra**. Did you mean to run this in the other project?"
+This is **marcioapps**.
 
-# [Your Project Name] — Project Directives
+# marcioapps — Project Directives
 
 > **On-demand docs — load when the task matches:**
 > - `docs/CREDENTIALS.md` — **load for:** SQL queries, deploying functions, SSH, API calls
@@ -41,7 +40,8 @@ This is **alpacapps-infra**. If the user mentions **finleg**, **portsie**, or **
 ## Quick Refs
 
 - **Tech:** Vanilla HTML/JS + Tailwind v4 | Supabase | Cloudflare Pages
-- **Live:** https://YOUR_PROJECT.pages.dev/ (or custom domain)
+- **Live:** https://marcioapps.pages.dev/
+- **Repo:** https://github.com/marbroich/marcioapps
 - **Architecture:** Browser → Cloudflare Pages → Supabase (no server-side code)
 - **Template repo:** https://github.com/rsonnad/alpacapps-infra
 - **Upgrade guide:** `infra/infra-upgrade-guide.md`

@@ -54,3 +54,9 @@ pai-discord/node_modules/
 # Gmail OAuth credentials (secret)
 scripts/gmail-credentials.json
 .gstack/
+
+# Setup wizard state (gitignored)
+.setup-state.json
+
+# Wrangler local cache
+.wrangler/
