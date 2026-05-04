@@ -147,41 +147,64 @@
          ============================================================ -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
       <defs>
-        <!-- =========== ALT E — STAR-PERSON NEON LAYERS (NEW) =========== -->
+        <!-- =========== ALT E — STAR-PERSON NEON v2 (slimmer, no top point) =========== -->
         <!--
-             Figure: round head (circle) + 5-pointed star body.
-             5 concentric outline layers in neon colors, each successively smaller,
-             produces a pulsing-rainbow-aura effect. Outer layer drawn first
-             (behind), innermost last (on top).
+             v2 changes:
+             - Head: rounded only (no star point on top — head sits on body's top edge)
+             - Body: human-star silhouette with proper arms + legs (no central top point)
+             - Slimmer overall proportions
+             - 5 neon layers matching Gemini reference palette: magenta → yellow →
+               green → purple → cyan
+             - Soft glow filter for neon feel
         -->
+
+        <!-- Soft glow filter (neon halo around each stroke) -->
+        <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
         <g id="figure-base-neon">
-          <!-- Head: round, sits above the star top point -->
-          <circle cx="200" cy="100" r="28" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-          <!-- Body: 5-pointed star, top point connects to head bottom -->
-          <path d="M 200,130 L 232.4,200.5 L 308.6,209 L 250.6,260.4 L 268.6,335 L 200,295 L 131.4,335 L 149.4,260.4 L 91.4,209 L 167.6,200.5 Z"
-                fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- Head: pure round circle — NO point on top -->
+          <circle cx="200" cy="125" r="38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+          <!-- Body: human-shaped star silhouette. Path traces clockwise from
+               top-left of shoulders, out to left arm, inner valley, down to
+               left leg, central bottom point, right leg, inner valley under
+               right arm, right arm, top-right of shoulders. Z closes back
+               to start (the line UNDER the head). -->
+          <path d="M 180 158
+                   L 90 195
+                   L 168 215
+                   L 135 335
+                   L 200 295
+                   L 265 335
+                   L 232 215
+                   L 310 195
+                   L 220 158
+                   Z"
+                fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
         </g>
 
-        <g id="alt-e">
-          <!-- Background: subtle outer glow ring -->
-          <circle cx="200" cy="218" r="180" fill="none" stroke="#a8b4d4" stroke-width="0.5" opacity="0.25"/>
-
-          <!-- 5 layers, scaled around the figure's visual center (200, 218).
-               Outermost (largest scale, drawn first) — pink
-               Innermost (smallest scale, drawn last) — cyan -->
-          <g transform="translate(200 218) scale(1.18) translate(-200 -218)" style="color:#ff3aa1">
+        <g id="alt-e" filter="url(#neon-glow)">
+          <!-- 5 layers scaled around figure visual center (200, 215).
+               Outermost first (behind), innermost last (on top).
+               Palette matches user's Gemini reference. -->
+          <g transform="translate(200 215) scale(1.14) translate(-200 -215)" style="color:#ff3aa1">
             <use href="#figure-base-neon"/>
           </g>
-          <g transform="translate(200 218) scale(1.10) translate(-200 -218)" style="color:#ff8a3a">
+          <g transform="translate(200 215) scale(1.07) translate(-200 -215)" style="color:#ffe833">
             <use href="#figure-base-neon"/>
           </g>
-          <g transform="translate(200 218) scale(1.02) translate(-200 -218)" style="color:#ffd83a">
+          <g transform="translate(200 215) scale(1.00) translate(-200 -215)" style="color:#3aff7a">
             <use href="#figure-base-neon"/>
           </g>
-          <g transform="translate(200 218) scale(0.94) translate(-200 -218)" style="color:#a85aff">
+          <g transform="translate(200 215) scale(0.93) translate(-200 -215)" style="color:#a85aff">
             <use href="#figure-base-neon"/>
           </g>
-          <g transform="translate(200 218) scale(0.86) translate(-200 -218)" style="color:#3affd0">
+          <g transform="translate(200 215) scale(0.86) translate(-200 -215)" style="color:#3affd0">
             <use href="#figure-base-neon"/>
           </g>
         </g>
