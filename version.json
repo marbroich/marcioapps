@@ -1,12 +1,12 @@
 {
-  "version": "v260504.18 11:01p",
-  "release": 18,
-  "sha": "b54b6a0",
-  "fullSha": "b54b6a0858f51465e876c38e20377d91a8c1d964",
+  "version": "v260504.19 11:20p",
+  "release": 19,
+  "sha": "e82e8dd",
+  "fullSha": "e82e8dd71413740e7f0f8ebfa06f32f9332b9e8b",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T20:01:45-03:00",
-  "commits": [{"sha":"b54b6a0","message":"design(branding): align arm tips with letter visual centers (asymmetric)","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-04T20:20:25-03:00",
+  "commits": [{"sha":"e82e8dd","message":"design(branding): reduce overlap between arms and letters in lockup 2","author":"Marcio Simao"}]
 }
