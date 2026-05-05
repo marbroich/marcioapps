@@ -1,12 +1,12 @@
 {
-  "version": "v260504.19 11:20p",
-  "release": 19,
-  "sha": "e82e8dd",
-  "fullSha": "e82e8dd71413740e7f0f8ebfa06f32f9332b9e8b",
+  "version": "v260505.01 9:11p",
+  "release": 1,
+  "sha": "0160d69",
+  "fullSha": "0160d6953a87e46c5bb0db098183468e56a184e1",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-04T20:20:25-03:00",
-  "commits": [{"sha":"e82e8dd","message":"design(branding): reduce overlap between arms and letters in lockup 2","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-05T18:11:10-03:00",
+  "commits": [{"sha":"0160d69","message":"design(branding): figure 'protecting' words from above with no contact","author":"Marcio Simao"}]
 }
