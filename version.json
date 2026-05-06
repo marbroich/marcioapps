@@ -1,12 +1,12 @@
 {
-  "version": "v260506.01 12:14a",
-  "release": 1,
-  "sha": "0bdfbbd",
-  "fullSha": "0bdfbbd1731c9de791a5499c5548120793287cfb",
+  "version": "v260506.02 11:19p",
+  "release": 2,
+  "sha": "29e9fc5",
+  "fullSha": "29e9fc527b5f71d1183c85585146b1ae75772cf1",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-05T21:13:47-03:00",
-  "commits": [{"sha":"0bdfbbd","message":"design(branding): final fine-tune — closer + slightly higher arms","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-06T20:19:00-03:00",
+  "commits": [{"sha":"29e9fc5","message":"build: add scripts/build-esoyou.sh to package /astro/ as standalone site","author":"Marcio Simao"}]
 }
