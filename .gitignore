@@ -60,3 +60,4 @@ scripts/gmail-credentials.json
 
 # Wrangler local cache
 .wrangler/
+dist-esoyou/
