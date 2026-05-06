@@ -1,12 +1,12 @@
 {
-  "version": "v260505.01 9:11p",
+  "version": "v260506.01 12:14a",
   "release": 1,
-  "sha": "0160d69",
-  "fullSha": "0160d6953a87e46c5bb0db098183468e56a184e1",
+  "sha": "0bdfbbd",
+  "fullSha": "0bdfbbd1731c9de791a5499c5548120793287cfb",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-05T18:11:10-03:00",
-  "commits": [{"sha":"0160d69","message":"design(branding): figure 'protecting' words from above with no contact","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-05T21:13:47-03:00",
+  "commits": [{"sha":"0bdfbbd","message":"design(branding): final fine-tune — closer + slightly higher arms","author":"Marcio Simao"}]
 }
