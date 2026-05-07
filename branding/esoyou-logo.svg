@@ -4,82 +4,84 @@
   Single source of truth: every page references THIS file.
   Future logo changes = edit only this file.
 
-  Usage:
-    <img src="/branding/esoyou-logo.svg" alt="EsoYou" width="120" height="120">
-  Or inline as <object> / <use href> for currentColor tinting.
-
-  Design:
-    - 12 stylized Vitruvian figures arranged radially in a 360° wheel
-    - Each figure in its own hue (continuous color spectrum)
-    - Outer + dashed inner ring + center seal in currentColor (silver/onyx)
-    - Background star sparkles for the night-sky theme
-    - Stroke-based: scales perfectly from 16px favicon to 400px hero
+  Design: rounded head + 4-point starburst body (arms curving like
+  angel wings + sharp legs as stars). 5 concentric neon outline layers
+  (magenta → yellow → green → purple → cyan from outer to inner) with
+  a soft glow filter for the neon feel. Background star sparkles
+  scattered around evoke the night-sky theme.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="EsoYou">
   <title>EsoYou</title>
   <defs>
-    <!-- Single Vitruvian-inspired figure, centered at (0, 0). Recolored per
-         instance via wrapping <g style="color:..."> + currentColor. -->
-    <g id="vit-figure">
-      <circle cx="0" cy="0" r="20" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
-      <circle cx="0" cy="-13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
-      <line x1="0" y1="-9.5" x2="0" y2="7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <line x1="-16" y1="-2" x2="16" y2="-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <line x1="0" y1="7.5" x2="-11" y2="19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <line x1="0" y1="7.5" x2="11" y2="19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- Soft glow filter (neon halo around each stroke) -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- The figure: head + body. Recolored per layer via currentColor. -->
+    <g id="figure-base">
+      <!-- Round head -->
+      <circle cx="200" cy="105" r="40" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <!-- Body: arms arcing down (angel wings) + sharp star legs.
+           Path traces clockwise from right shoulder. -->
+      <path d="M 232 142
+               Q 320 110 340 220
+               Q 290 195 248 175
+               L 245 235
+               L 320 365
+               L 200 285
+               L 80 365
+               L 155 235
+               L 152 175
+               Q 110 195 60 220
+               Q 80 110 168 142 Z"
+            fill="none" stroke="currentColor" stroke-width="3.5"
+            stroke-linejoin="round" stroke-linecap="round"/>
     </g>
 
-    <!-- Cross-shaped sparkle star (small ornamental highlight) -->
+    <!-- Star sparkle (small 4-point cross) -->
     <g id="star-sparkle">
       <line x1="-2" y1="0" x2="2" y2="0" stroke="currentColor" stroke-width="0.6" stroke-linecap="round"/>
       <line x1="0" y1="-2" x2="0" y2="2" stroke="currentColor" stroke-width="0.6" stroke-linecap="round"/>
     </g>
   </defs>
 
-  <!-- Background star field (silver dots scattered around the wheel) -->
-  <g class="bg-stars" stroke="currentColor" fill="currentColor">
-    <circle cx="60"  cy="80"  r="0.8" opacity="0.7"/>
-    <circle cx="120" cy="40"  r="0.6" opacity="0.5"/>
-    <circle cx="180" cy="25"  r="0.9" opacity="0.85"/>
-    <circle cx="290" cy="35"  r="0.7" opacity="0.6"/>
-    <circle cx="340" cy="65"  r="0.5" opacity="0.45"/>
-    <circle cx="380" cy="120" r="0.8" opacity="0.7"/>
-    <circle cx="365" cy="200" r="0.5" opacity="0.5"/>
+  <!-- Background star field (silver dots scattered around the figure) -->
+  <g class="bg-stars" stroke="#d8dde8" fill="#d8dde8">
+    <circle cx="60"  cy="40"  r="0.8" opacity="0.7"/>
+    <circle cx="120" cy="25"  r="0.6" opacity="0.5"/>
+    <circle cx="180" cy="15"  r="0.9" opacity="0.85"/>
+    <circle cx="290" cy="25"  r="0.7" opacity="0.6"/>
+    <circle cx="340" cy="50"  r="0.5" opacity="0.45"/>
+    <circle cx="380" cy="115" r="0.8" opacity="0.7"/>
+    <circle cx="365" cy="195" r="0.5" opacity="0.5"/>
     <circle cx="380" cy="280" r="0.9" opacity="0.8"/>
-    <circle cx="340" cy="340" r="0.6" opacity="0.55"/>
-    <circle cx="270" cy="370" r="0.8" opacity="0.7"/>
-    <circle cx="160" cy="375" r="0.7" opacity="0.6"/>
-    <circle cx="90"  cy="345" r="0.5" opacity="0.45"/>
+    <circle cx="340" cy="345" r="0.6" opacity="0.55"/>
+    <circle cx="270" cy="380" r="0.8" opacity="0.7"/>
+    <circle cx="160" cy="385" r="0.7" opacity="0.6"/>
+    <circle cx="90"  cy="350" r="0.5" opacity="0.45"/>
     <circle cx="30"  cy="270" r="0.8" opacity="0.7"/>
     <circle cx="20"  cy="180" r="0.6" opacity="0.5"/>
-    <circle cx="35"  cy="120" r="0.9" opacity="0.85"/>
-    <circle cx="220" cy="60"  r="0.5" opacity="0.4"/>
-    <circle cx="245" cy="350" r="0.6" opacity="0.55"/>
-    <circle cx="80"  cy="55"  r="0.55" opacity="0.5"/>
-    <circle cx="155" cy="60"  r="0.7"  opacity="0.65"/>
-    <circle cx="200" cy="10"  r="0.5"  opacity="0.4"/>
+    <circle cx="35"  cy="105" r="0.9" opacity="0.85"/>
+    <circle cx="220" cy="50"  r="0.5" opacity="0.4"/>
+    <circle cx="50"  cy="80"  r="0.55" opacity="0.5"/>
+    <circle cx="155" cy="55"  r="0.7"  opacity="0.65"/>
     <circle cx="248" cy="22"  r="0.85" opacity="0.75"/>
     <circle cx="320" cy="48"  r="0.5"  opacity="0.5"/>
-    <circle cx="360" cy="92"  r="0.65" opacity="0.55"/>
     <circle cx="392" cy="160" r="0.55" opacity="0.5"/>
     <circle cx="378" cy="232" r="0.8"  opacity="0.7"/>
     <circle cx="395" cy="320" r="0.5"  opacity="0.45"/>
-    <circle cx="358" cy="370" r="0.7"  opacity="0.6"/>
     <circle cx="305" cy="385" r="0.55" opacity="0.5"/>
-    <circle cx="220" cy="395" r="0.85" opacity="0.75"/>
     <circle cx="135" cy="395" r="0.5"  opacity="0.45"/>
-    <circle cx="60"  cy="375" r="0.65" opacity="0.6"/>
+    <circle cx="60"  cy="385" r="0.65" opacity="0.6"/>
     <circle cx="12"  cy="320" r="0.55" opacity="0.5"/>
     <circle cx="8"   cy="225" r="0.7"  opacity="0.65"/>
     <circle cx="10"  cy="148" r="0.5"  opacity="0.4"/>
-    <circle cx="5"   cy="80"  r="0.85" opacity="0.7"/>
-    <circle cx="48"  cy="158" r="0.45" opacity="0.4"/>
-    <circle cx="100" cy="95"  r="0.5"  opacity="0.45"/>
-    <circle cx="295" cy="78"  r="0.55" opacity="0.5"/>
-    <circle cx="178" cy="318" r="0.5"  opacity="0.45"/>
-    <circle cx="105" cy="278" r="0.45" opacity="0.4"/>
-    <circle cx="305" cy="135" r="0.5"  opacity="0.45"/>
-    <circle cx="155" cy="115" r="0.4"  opacity="0.35"/>
+    <circle cx="5"   cy="70"  r="0.85" opacity="0.7"/>
     <g transform="translate(50, 50)"   opacity="0.7"><use href="#star-sparkle"/></g>
     <g transform="translate(355, 105)" opacity="0.65"><use href="#star-sparkle"/></g>
     <g transform="translate(360, 305)" opacity="0.6"><use href="#star-sparkle"/></g>
@@ -87,30 +89,16 @@
     <g transform="translate(105, 380)" opacity="0.55"><use href="#star-sparkle"/></g>
     <g transform="translate(255, 18)"  opacity="0.7"><use href="#star-sparkle"/></g>
     <g transform="translate(388, 200)" opacity="0.65"><use href="#star-sparkle"/></g>
-    <g transform="translate(248, 388)" opacity="0.6"><use href="#star-sparkle"/></g>
     <g transform="translate(15, 248)"  opacity="0.65"><use href="#star-sparkle"/></g>
     <g transform="translate(180, 5)"   opacity="0.5"><use href="#star-sparkle"/></g>
   </g>
 
-  <!-- Outer rings -->
-  <circle cx="200" cy="200" r="190" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
-  <circle cx="200" cy="200" r="172" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.5" stroke-dasharray="1 3"/>
-
-  <!-- Center seal -->
-  <circle cx="200" cy="200" r="8" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
-  <circle cx="200" cy="200" r="2.5" fill="currentColor" opacity="0.85"/>
-
-  <!-- The 12 Vitruvian figures, each in its own hue. Aries at top, clockwise. -->
-  <g transform="translate(200, 50)  rotate(0)"   style="color:#ff7a8a"><use href="#vit-figure"/></g>
-  <g transform="translate(275, 70)  rotate(30)"  style="color:#ffa470"><use href="#vit-figure"/></g>
-  <g transform="translate(330, 125) rotate(60)"  style="color:#f5cd5a"><use href="#vit-figure"/></g>
-  <g transform="translate(350, 200) rotate(90)"  style="color:#c8e070"><use href="#vit-figure"/></g>
-  <g transform="translate(330, 275) rotate(120)" style="color:#7adb8a"><use href="#vit-figure"/></g>
-  <g transform="translate(275, 330) rotate(150)" style="color:#5fd4c4"><use href="#vit-figure"/></g>
-  <g transform="translate(200, 350) rotate(180)" style="color:#6bc4e8"><use href="#vit-figure"/></g>
-  <g transform="translate(125, 330) rotate(210)" style="color:#7aa4ed"><use href="#vit-figure"/></g>
-  <g transform="translate(70,  275) rotate(240)" style="color:#a088e4"><use href="#vit-figure"/></g>
-  <g transform="translate(50,  200) rotate(270)" style="color:#c47adb"><use href="#vit-figure"/></g>
-  <g transform="translate(70,  125) rotate(300)" style="color:#e878c4"><use href="#vit-figure"/></g>
-  <g transform="translate(125, 70)  rotate(330)" style="color:#f06a98"><use href="#vit-figure"/></g>
+  <!-- The 5 neon layers, scaled around figure visual center (200, 215) -->
+  <g filter="url(#neon-glow)">
+    <g transform="translate(200 215) scale(1.14) translate(-200 -215)" style="color:#ff3aa1"><use href="#figure-base"/></g>
+    <g transform="translate(200 215) scale(1.07) translate(-200 -215)" style="color:#ffe833"><use href="#figure-base"/></g>
+    <g transform="translate(200 215) scale(1.00) translate(-200 -215)" style="color:#3aff7a"><use href="#figure-base"/></g>
+    <g transform="translate(200 215) scale(0.93) translate(-200 -215)" style="color:#a85aff"><use href="#figure-base"/></g>
+    <g transform="translate(200 215) scale(0.86) translate(-200 -215)" style="color:#3affd0"><use href="#figure-base"/></g>
+  </g>
 </svg>
