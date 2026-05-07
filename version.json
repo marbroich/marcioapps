@@ -1,12 +1,12 @@
 {
-  "version": "v260507.02 1:33a",
-  "release": 2,
-  "sha": "a37bd43",
-  "fullSha": "a37bd436d0236cc1844f366c0d6ffea3202d5d95",
+  "version": "v260507.03 1:40a",
+  "release": 3,
+  "sha": "8fafaea",
+  "fullSha": "8fafaea2d60afe124d164c1068fa91ebab3eb86b",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-06T22:33:28-03:00",
-  "commits": [{"sha":"a37bd43","message":"build(esoyou): force fresh Cloudflare Pages deploy","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-06T22:39:45-03:00",
+  "commits": [{"sha":"8fafaea","message":"build: add npm alias 'build-esoyou' to avoid dot-in-path Cloudflare UI bug","author":"Marcio Simao"}]
 }
