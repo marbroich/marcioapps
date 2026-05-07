@@ -1,12 +1,12 @@
 {
-  "version": "v260507.03 1:40a",
-  "release": 3,
-  "sha": "8fafaea",
-  "fullSha": "8fafaea2d60afe124d164c1068fa91ebab3eb86b",
+  "version": "v260507.04 1:50a",
+  "release": 4,
+  "sha": "ebcea8a",
+  "fullSha": "ebcea8a6c0d5273051bd61459d8649ae8578b3f1",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-06T22:39:45-03:00",
-  "commits": [{"sha":"8fafaea","message":"build: add npm alias 'build-esoyou' to avoid dot-in-path Cloudflare UI bug","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-06T22:50:37-03:00",
+  "commits": [{"sha":"ebcea8a","message":"design(branding): replace logo + favicon with the new angel-wings figure","author":"Marcio Simao"}]
 }
