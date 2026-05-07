@@ -1,12 +1,12 @@
 {
-  "version": "v260507.01 1:24a",
-  "release": 1,
-  "sha": "1b9a506",
-  "fullSha": "1b9a5069441a6d519b9262352b36c8df1c3a81b9",
+  "version": "v260507.02 1:33a",
+  "release": 2,
+  "sha": "a37bd43",
+  "fullSha": "a37bd436d0236cc1844f366c0d6ffea3202d5d95",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-06T22:24:46-03:00",
-  "commits": [{"sha":"1b9a506","message":"ci: nudge esoyou redeploy with new build config","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-06T22:33:28-03:00",
+  "commits": [{"sha":"a37bd43","message":"build(esoyou): force fresh Cloudflare Pages deploy","author":"Marcio Simao"}]
 }
