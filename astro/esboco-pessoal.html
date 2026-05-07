@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EsoYou · Persona de Marcio (esboço)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #e8edf5;
+      background: #1a2a5c;
+      background-image:
+        radial-gradient(ellipse at 30% 10%, rgba(80, 110, 180, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(40, 70, 140, 0.4) 0%, transparent 60%),
+        linear-gradient(180deg, #0e1a3c 0%, #1a2a5c 50%, #243878 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 12% 8%, #fff, transparent),
+        radial-gradient(1px 1px at 28% 22%, #d8dde8, transparent),
+        radial-gradient(1.4px 1.4px at 47% 6%, #fff, transparent),
+        radial-gradient(1px 1px at 65% 14%, #d8dde8, transparent),
+        radial-gradient(1.2px 1.2px at 82% 26%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 92% 12%, #d8dde8, transparent),
+        radial-gradient(1.5px 1.5px at 6% 38%, #fff, transparent),
+        radial-gradient(1px 1px at 22% 52%, #d8dde8, transparent),
+        radial-gradient(1.3px 1.3px at 88% 48%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 96% 62%, #d8dde8, transparent),
+        radial-gradient(1px 1px at 8% 72%, #d8dde8, transparent),
+        radial-gradient(1.4px 1.4px at 18% 88%, #fff, transparent),
+        radial-gradient(1px 1px at 36% 94%, #d8dde8, transparent),
+        radial-gradient(1.2px 1.2px at 58% 82%, #e8edf5, transparent),
+        radial-gradient(1px 1px at 76% 92%, #d8dde8, transparent),
+        radial-gradient(1.5px 1.5px at 90% 78%, #fff, transparent);
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      z-index: 0;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 6rem; position: relative; z-index: 1; }
+
+    /* ============== HEADER ============== */
+    .draft-banner {
+      background: rgba(255, 200, 80, 0.12);
+      border: 1px solid rgba(255, 200, 80, 0.3);
+      color: #ffe1a3;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .header-logo {
+      width: 36px;
+      height: 36px;
+    }
+    .header-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      background: linear-gradient(180deg, #fff, #c8d0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header-sub {
+      color: #98a8c8;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ============== HERO (avatar + persona name) ============== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem 0 2rem;
+    }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .avatar-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .avatar-svg {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 0 30px rgba(180, 200, 240, 0.18));
+    }
+    .avatar-traits {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .avatar-trait {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(192, 200, 230, 0.2);
+      border-radius: 9999px;
+      color: #c8d0e8;
+    }
+
+    .persona-block .persona-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #b8a8d6;
+      margin-bottom: 0.5rem;
+    }
+    .persona-archetype {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.005em;
+      background: linear-gradient(135deg, #fff 0%, #e0c890 50%, #c8d0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .persona-subtitle {
+      font-size: 1rem;
+      color: #b8c2d8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .persona-essence {
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid #e0c890;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #d8dde8;
+    }
+    .persona-essence strong { color: #ffe1a3; }
+
+    /* ============== MODALITY CHIPS ============== */
+    .modality-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0 0;
+    }
+    .modality-chip {
+      padding: 0.55rem 0.95rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(192, 200, 230, 0.2);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      color: #d8dde8;
+    }
+    .modality-chip strong { color: #ffe1a3; }
+
+    /* ============== SECTION TITLE ============== */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.005em;
+      margin: 4rem 0 0.5rem;
+      background: linear-gradient(180deg, #fff, #c8d0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub {
+      color: #98a8c8;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 60ch;
+    }
+
+    /* ============== LIFE AREA CARDS ============== */
+    .life-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+    .life-card {
+      padding: 1.5rem 1.5rem 1.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(192, 200, 230, 0.16);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+    }
+    .life-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .life-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+      color: #f0f4ff;
+    }
+    .life-card-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #98a8c8;
+      margin-bottom: 1rem;
+    }
+    .life-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .life-card li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(192, 200, 230, 0.08);
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: #d8dde8;
+    }
+    .life-card li:last-child { border-bottom: none; }
+    .life-card li::before {
+      content: '·';
+      color: #e0c890;
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    /* ============== NUMEROLOGY COMPARISON ============== */
+    .num-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 700px) {
+      .num-compare { grid-template-columns: 1fr; }
+    }
+    .num-card {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(192, 200, 230, 0.16);
+      border-radius: 14px;
+    }
+    .num-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #98a8c8;
+      margin-bottom: 0.4rem;
+    }
+    .num-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: #f0f4ff;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.005em;
+    }
+    .num-card-name .diff { color: #ffe1a3; font-weight: 600; }
+    .num-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(192, 200, 230, 0.08);
+    }
+    .num-row:last-child { border-bottom: none; }
+    .num-row-name { color: #b8c2d8; font-size: 0.9rem; }
+    .num-row-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #fff;
+    }
+    .num-row.diff .num-row-value { color: #ffe1a3; }
+    .num-row.same .num-row-value { color: #c8d0e8; }
+    .num-insight {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 225, 163, 0.06);
+      border-left: 3px solid #e0c890;
+      border-radius: 4px;
+      color: #f0e8d8;
+      font-size: 0.95rem;
+    }
+    .num-insight strong { color: #ffe1a3; }
+
+    /* ============== CONVERGENCE / TENSIONS ============== */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 700px) {
+      .insights-grid { grid-template-columns: 1fr; }
+    }
+    .insight-block {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(192, 200, 230, 0.16);
+      border-radius: 14px;
+    }
+    .insight-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: #f0f4ff;
+    }
+    .insight-block .icon { font-size: 1.4rem; margin-right: 0.4rem; }
+    .insight-block ul { list-style: none; padding: 0; }
+    .insight-block li {
+      padding: 0.55rem 0;
+      color: #d8dde8;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      border-bottom: 1px solid rgba(192, 200, 230, 0.08);
+    }
+    .insight-block li:last-child { border-bottom: none; }
+
+    /* ============== FOOTER ============== */
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(192, 200, 230, 0.15);
+      color: #98a8c8;
+      font-size: 0.85rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- ============================================================
+       SVG DEFINITIONS — Marcio's custom-palette figure
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <g id="figure-base">
+        <circle cx="200" cy="105" r="40" fill="none" stroke="currentColor" stroke-width="3.5"/>
+        <path d="M 232 142 Q 320 110 340 220 Q 290 195 248 175 L 245 235 L 320 365 L 200 285 L 80 365 L 155 235 L 152 175 Q 110 195 60 220 Q 80 110 168 142 Z"
+              fill="none" stroke="currentColor" stroke-width="3.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+
+      <!-- Marcio's avatar palette:
+           Outer: Leo gold (#e8a83a)
+           4th: Cancer silver-blue (#a8c4e8)
+           Mid: Wood Tiger jade (#5fb88a)
+           2nd: Path 5 freedom violet (#b87ad8)
+           Inner: Soul 8 mastery white (#fff8e8) -->
+      <g id="marcio-avatar" filter="url(#neon-glow)">
+        <g transform="translate(200 215) scale(1.14) translate(-200 -215)" style="color:#e8a83a"><use href="#figure-base"/></g>
+        <g transform="translate(200 215) scale(1.07) translate(-200 -215)" style="color:#a8c4e8"><use href="#figure-base"/></g>
+        <g transform="translate(200 215) scale(1.00) translate(-200 -215)" style="color:#5fb88a"><use href="#figure-base"/></g>
+        <g transform="translate(200 215) scale(0.93) translate(-200 -215)" style="color:#b87ad8"><use href="#figure-base"/></g>
+        <g transform="translate(200 215) scale(0.86) translate(-200 -215)" style="color:#fff8e8"><use href="#figure-base"/></g>
+      </g>
+    </defs>
+  </svg>
+
+  <main>
+    <!-- ============== DRAFT BANNER ============== -->
+    <div class="draft-banner">
+      ✍️ Esboço conceitual · prévia da experiência futura do EsoYou
+    </div>
+
+    <!-- ============== HEADER ============== -->
+    <div class="header-row">
+      <svg viewBox="0 0 400 400" class="header-logo" style="color:#d8dde8"><use href="#marcio-avatar"/></svg>
+      <div>
+        <div class="header-name">EsoYou</div>
+        <div class="header-sub">retrato esotérico</div>
+      </div>
+    </div>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="avatar-stage">
+        <svg viewBox="0 0 400 400" class="avatar-svg"><use href="#marcio-avatar"/></svg>
+        <div class="avatar-traits">
+          <span class="avatar-trait" style="color:#e8a83a">⊙ Leão</span>
+          <span class="avatar-trait" style="color:#a8c4e8">☽ Câncer</span>
+          <span class="avatar-trait" style="color:#5fb88a">🐅 Tigre Madeira</span>
+          <span class="avatar-trait" style="color:#b87ad8">5 Caminho</span>
+          <span class="avatar-trait" style="color:#fff8e8">8 Alma</span>
+        </div>
+      </div>
+
+      <div class="persona-block">
+        <p class="persona-tag">arquétipo · O seu 'eu' esotérico</p>
+        <h1 class="persona-archetype">O&nbsp;Tigre<br>da&nbsp;Lua</h1>
+        <p class="persona-subtitle">Coração de Câncer · presença de Leão · coragem de Tigre · alma de explorador</p>
+        <div class="persona-essence">
+          Você carrega uma <strong>combinação rara</strong>: a sensibilidade emocional de Câncer dentro de uma carcaça de líder leonino, atravessada pela coragem filosófica de um Tigre de Madeira e a fome de movimento do Caminho 5. <strong>Profundidade que não para</strong>. Cuida com garras, lidera com coração, busca causas — mas nunca se prende a uma só.
+        </div>
+
+        <div class="modality-row">
+          <span class="modality-chip">🌌 <strong>Sol em Câncer</strong> · Asc. Leão</span>
+          <span class="modality-chip">🐅 <strong>Tigre de Madeira</strong> · 1974</span>
+          <span class="modality-chip">🛤️ <strong>Caminho 5</strong> · Alma 8</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== LIFE AREAS ============== -->
+    <h2 class="section-title">Direções para sua vida</h2>
+    <p class="section-sub">Síntese das 3 ciências, organizada por área. Não é horóscopo genérico — é o que <em>seu</em> mapa específico aponta.</p>
+
+    <div class="life-grid">
+      <div class="life-card">
+        <div class="life-card-icon">💖</div>
+        <h3 class="life-card-title">Amor</h3>
+        <p class="life-card-tag">o que combina · o que machuca</p>
+        <ul>
+          <li>Você se entrega rápido e fundo — relações superficiais te frustram em semanas</li>
+          <li>Mas precisa de oxigênio: parceiro que abrace sem aprisionar</li>
+          <li>Atrai melhor quando NÃO carrega o relacionamento sozinho</li>
+          <li>Cuidado: vira "casca de proteção" ao se sentir vulnerável — treine se mostrar</li>
+          <li>Evita: pessoas controladoras, possessivas ou superficialmente carismáticas</li>
+        </ul>
+      </div>
+
+      <div class="life-card">
+        <div class="life-card-icon">💼</div>
+        <h3 class="life-card-title">Trabalho</h3>
+        <p class="life-card-tag">onde brilha · onde sufoca</p>
+        <ul>
+          <li>Liderança com causa = seu lugar natural (mentoria, criação, projetos com impacto)</li>
+          <li>Brilha em ambientes onde pode iniciar e mudar — não em rotina linear</li>
+          <li>Empreendedorismo, palestra, ensino, cura, justiça social: campos férteis</li>
+          <li>Aprenda a delegar — você não precisa carregar tudo nas costas</li>
+          <li>Sua missão (Caminho 5): aprender a se mover livre sem desabrigar quem ama</li>
+        </ul>
+      </div>
+
+      <div class="life-card">
+        <div class="life-card-icon">🌿</div>
+        <h3 class="life-card-title">Saúde</h3>
+        <p class="life-card-tag">corpo · ritmo · cuidado</p>
+        <ul>
+          <li>Movimento ideal: variado, com graça — Tai Chi, Yoga, dança, caminhada na natureza</li>
+          <li>Evite: musculação repetitiva, esportes muito agressivos, treinos militares</li>
+          <li>Sono e digestão refletem seu estado emocional — guarde isso</li>
+          <li>Estresse vira tensão física rápido — gerencie o sentimento, não acumule</li>
+          <li>Períodos de quietude profunda não são fraqueza — são manutenção do tigre</li>
+        </ul>
+      </div>
+
+      <div class="life-card">
+        <div class="life-card-icon">🤝</div>
+        <h3 class="life-card-title">Social</h3>
+        <p class="life-card-tag">como se relaciona · onde restaura</p>
+        <ul>
+          <li>Magnetiza quando aparece — mas restaura energia em recolhimento</li>
+          <li>Poucos amigos profundos &gt; muitos conhecidos superficiais</li>
+          <li>Mistura bem com: gente de causa, criativos, ativistas, mentores espirituais</li>
+          <li>Seu papel: catalisador de movimentos pequenos e significativos</li>
+          <li>Cuidado: orgulho ferido (Leão) cicatriza devagar — treine pedir desculpa rápido</li>
+        </ul>
+      </div>
+
+      <div class="life-card">
+        <div class="life-card-icon">🧠</div>
+        <h3 class="life-card-title">Mente</h3>
+        <p class="life-card-tag">como aprende · o que estudar</p>
+        <ul>
+          <li>Aprende explorando muitas coisas — com fome de profundidade em cada uma</li>
+          <li>Cursos curtos e variados &gt; programas longos lineares</li>
+          <li>Áreas que ressoam: filosofia, espiritualidade, comportamento humano, justiça, artes</li>
+          <li>Você ensina enquanto aprende — docência, palestra, escrita: terreno fértil</li>
+          <li>Sua armadilha: dispersão emocional. Treine focar UMA coisa por vez</li>
+        </ul>
+      </div>
+
+      <div class="life-card">
+        <div class="life-card-icon">🎯</div>
+        <h3 class="life-card-title">Espiritual</h3>
+        <p class="life-card-tag">caminho · prática · sombra</p>
+        <ul>
+          <li>Caminho não-dogmático: mistura tradições com inteligência</li>
+          <li>Pratique meditação que envolve <em>sentir</em>, não só observar</li>
+          <li>Sua linha: justiça espiritual, cura, proteção dos vulneráveis</li>
+          <li>Cresce em comunidades de propósito — seca em estruturas dogmáticas</li>
+          <li>Sombra: salvar todo mundo. Lembre: às vezes seu papel é só iluminar</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============== NUMEROLOGY COMPARISON ============== -->
+    <h2 class="section-title">Os dois nomes — a chave secreta</h2>
+    <p class="section-sub">A correção do nome não foi só burocrática. Numerologicamente, <em>mudou seu destino</em>. A alma permaneceu — mas o caminho se abriu.</p>
+
+    <div class="num-compare">
+      <div class="num-card">
+        <div class="num-card-label">⚖️ Nome registrado original</div>
+        <div class="num-card-name">Marcio Scharre<span class="diff">m</span>broich Simão</div>
+        <div class="num-row diff">
+          <span class="num-row-name">Expressão · Destino</span>
+          <span class="num-row-value">4</span>
+        </div>
+        <div class="num-row same">
+          <span class="num-row-name">Alma · Coração</span>
+          <span class="num-row-value">8</span>
+        </div>
+        <div class="num-row diff">
+          <span class="num-row-name">Personalidade</span>
+          <span class="num-row-value">5</span>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-card-label">✨ Nome corrigido (atual)</div>
+        <div class="num-card-name">Marcio Scharre<span class="diff">n</span>broich Simão</div>
+        <div class="num-row diff">
+          <span class="num-row-name">Expressão · Destino</span>
+          <span class="num-row-value">5</span>
+        </div>
+        <div class="num-row same">
+          <span class="num-row-name">Alma · Coração</span>
+          <span class="num-row-value">8</span>
+        </div>
+        <div class="num-row diff">
+          <span class="num-row-name">Personalidade</span>
+          <span class="num-row-value">6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="num-insight">
+      <strong>O que isso revela:</strong> sua <strong>Alma 8</strong> permaneceu nos dois nomes — sua essência não muda (sempre veio com fome de mestria). Mas a correção do "m" pra "n" trocou seu <strong>Destino de 4 (construtor) para 5 (explorador)</strong> — alinhado com seu Caminho de Vida 5. E sua <strong>Personalidade aparente passou de 5 (inquieto) para 6 (cuidador responsável)</strong>. Quando você reivindicou o nome correto da família, <em>simbolicamente trocou o destino de "construir estruturas alheias" pelo de "explorar com responsabilidade"</em>.
+    </div>
+
+    <!-- ============== CONVERGENCES & TENSIONS ============== -->
+    <h2 class="section-title">Onde os caminhos se encontram</h2>
+    <p class="section-sub">Quando 3 ciências diferentes apontam pra mesma coisa, a leitura ganha peso. Quando elas tensionam, você descobre as forças mais férteis em você.</p>
+
+    <div class="insights-grid">
+      <div class="insight-block">
+        <h3><span class="icon">🌟</span>Concordâncias</h3>
+        <ul>
+          <li><strong>Liderança com coração</strong> — Leão + Tigre + Alma 8 falam o mesmo</li>
+          <li><strong>Profundidade emocional</strong> — Câncer + Wood Tiger filosófico convergem</li>
+          <li><strong>Necessidade de propósito</strong> — Wood Tiger justiça + Câncer protetor + Caminho 5 humanista</li>
+          <li><strong>Movimento como vida</strong> — Caminho 5 + Tigre + Asc Leão presente</li>
+        </ul>
+      </div>
+
+      <div class="insight-block">
+        <h3><span class="icon">⚡</span>Tensões férteis</h3>
+        <ul>
+          <li><strong>Segurança emocional × liberdade</strong> — Câncer pede ninho, Caminho 5 pede asas. Sua vida inteira gira em torno desse equilíbrio</li>
+          <li><strong>Profundidade × variedade</strong> — Wood Tiger quer ir fundo, mas Caminho 5 quer ir longe. Quando você integra, vira mestre que viaja</li>
+          <li><strong>Brilho público × recolhimento privado</strong> — Leão precisa palco, Câncer precisa caverna. Equilibre os dois</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============== FOOTER ============== -->
+    <footer>
+      <p>EsoYou — Esboço pessoal de Marcio · gerado em 7 de maio de 2026</p>
+      <p style="margin-top:0.4rem;font-size:0.78rem;opacity:0.7">Este é um rascunho conceitual da experiência futura do app. Texto, layout, escolha do arquétipo e cores do avatar podem ser ajustados.</p>
+    </footer>
+  </main>
+</body>
+</html>
