@@ -1,12 +1,12 @@
 {
-  "version": "v260506.02 11:19p",
-  "release": 2,
-  "sha": "29e9fc5",
-  "fullSha": "29e9fc527b5f71d1183c85585146b1ae75772cf1",
+  "version": "v260507.01 1:24a",
+  "release": 1,
+  "sha": "1b9a506",
+  "fullSha": "1b9a5069441a6d519b9262352b36c8df1c3a81b9",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-06T20:19:00-03:00",
-  "commits": [{"sha":"29e9fc5","message":"build: add scripts/build-esoyou.sh to package /astro/ as standalone site","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-06T22:24:46-03:00",
+  "commits": [{"sha":"1b9a506","message":"ci: nudge esoyou redeploy with new build config","author":"Marcio Simao"}]
 }
