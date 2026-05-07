@@ -1,12 +1,12 @@
 {
-  "version": "v260507.04 1:50a",
-  "release": 4,
-  "sha": "ebcea8a",
-  "fullSha": "ebcea8a6c0d5273051bd61459d8649ae8578b3f1",
+  "version": "v260507.05 11:09p",
+  "release": 5,
+  "sha": "d1ccadf",
+  "fullSha": "d1ccadf16eef2e14cec1c7db5ffbf6623886edb8",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-06T22:50:37-03:00",
-  "commits": [{"sha":"ebcea8a","message":"design(branding): replace logo + favicon with the new angel-wings figure","author":"Marcio Simao"}]
+  "pushedAt": "2026-05-07T20:09:07-03:00",
+  "commits": [{"sha":"d1ccadf","message":"feat(esoyou): add personal persona sketch as shareable preview","author":"Marcio Simao"}]
 }
