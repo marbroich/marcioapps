@@ -50,3 +50,4 @@ echo "✓ Built $(find "$DIST" -type f | wc -l | tr -d ' ') files"
 echo "  Site root: $DIST"
 echo "  Top-level entries:"
 ls -1 "$DIST" | sed 's/^/    /'
+# Trigger redeploy after build config update.
