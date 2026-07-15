@@ -1,12 +1,12 @@
 {
-  "version": "v260715.01 5:48p",
-  "release": 1,
-  "sha": "4c05e31",
-  "fullSha": "4c05e31a1f12885b9d897e537bdf822b69beb82e",
+  "version": "v260715.02 5:50p",
+  "release": 2,
+  "sha": "7d04211",
+  "fullSha": "7d0421100f9a0c02aaeb722e8b8cfc3a76636318",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
   "machine": "runnervm3jd5f",
-  "pushedAt": "2026-07-15T14:48:32-03:00",
-  "commits": [{"sha":"4c05e31","message":"feat(release): add presenter press release pages (public + contact version)","author":"Marcio Simao"}]
+  "pushedAt": "2026-07-15T14:50:36-03:00",
+  "commits": [{"sha":"7d04211","message":"feat(release): add Instagram to public release footer","author":"Marcio Simao"}]
 }
