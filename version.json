@@ -1,12 +1,12 @@
 {
-  "version": "v260715.02 5:50p",
-  "release": 2,
-  "sha": "7d04211",
-  "fullSha": "7d0421100f9a0c02aaeb722e8b8cfc3a76636318",
+  "version": "v260715.03 6:03p",
+  "release": 3,
+  "sha": "ac24dfa",
+  "fullSha": "ac24dfa706bb319eab50145423edef2a54267a43",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
-  "machine": "runnervm3jd5f",
-  "pushedAt": "2026-07-15T14:50:36-03:00",
-  "commits": [{"sha":"7d04211","message":"feat(release): add Instagram to public release footer","author":"Marcio Simao"}]
+  "machine": "runnervm5mmn9",
+  "pushedAt": "2026-07-15T15:03:29-03:00",
+  "commits": [{"sha":"ac24dfa","message":"feat(release): full channels block in public release footer (no WhatsApp)","author":"Marcio Simao"}]
 }
