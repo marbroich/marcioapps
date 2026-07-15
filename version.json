@@ -1,12 +1,12 @@
 {
-  "version": "v260507.05 11:09p",
-  "release": 5,
-  "sha": "d1ccadf",
-  "fullSha": "d1ccadf16eef2e14cec1c7db5ffbf6623886edb8",
+  "version": "v260715.01 5:48p",
+  "release": 1,
+  "sha": "4c05e31",
+  "fullSha": "4c05e31a1f12885b9d897e537bdf822b69beb82e",
   "actor": "marbroich",
   "source": "cloudflare-pages-deploy",
   "model": "ci",
-  "machine": "runnervmeorf1",
-  "pushedAt": "2026-05-07T20:09:07-03:00",
-  "commits": [{"sha":"d1ccadf","message":"feat(esoyou): add personal persona sketch as shareable preview","author":"Marcio Simao"}]
+  "machine": "runnervm3jd5f",
+  "pushedAt": "2026-07-15T14:48:32-03:00",
+  "commits": [{"sha":"4c05e31","message":"feat(release): add presenter press release pages (public + contact version)","author":"Marcio Simao"}]
 }
